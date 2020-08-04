@@ -4,7 +4,7 @@
 CA is able to maintain the registration of information regarding single source procedures carried out of the eProcurement system and the execution of the process inside the system as well. Having entered the information regarding the procedure, CA enters information on the winner and the agreement. 
 The procurement process is carried out in the following sequence:
 
-![image](images/1.png)
+![image](../images/1.png)
 
 ## **Publication of a decision on intent to conclude an agreement**
 CA publishes the concluded agreement and enters information regarding the EO immediately. This information is published as a report on the concluded agreement. It is not possible to submit a complaint at this point.
@@ -77,7 +77,53 @@ CN described as Record Package consists of four (at least) or more Release Packa
 ## **Query models**
 
 ### **contractNoticeParent (cnParent) Query Model**
-![table](tables/cn_parent_query_model.csv)
+[](tables/cn_parent_query_model.csv)
+
+### ‘cnParent’ as Compiled Release
+```
+{
+  "ocid": "",
+  "id": "",
+  "date": "",
+  "tag": "compiled",
+  "initiationType": "tender",
+  "planning": {"$ref": "#/definitions/Planning"},
+  "tender": {
+    "id": "",
+    "title": "",
+    "description": "",
+    "classification": {"$ref": "#/definitions/Classification"},
+    "status": "",
+    "statusDetails": "",
+    "value": {"$ref": "#/definitions/Value"},
+    "procurementMethod": "",
+    "procurementMethodDetails": "",
+    "procurementMethodRationale": "",
+    "procurementMethodAdditionalInfo": "",
+    "mainProcurementCategory": "",
+    “procuringEntity”: {
+        “id”:””,
+        “name”: “”},
+    "additionalProcurementCategories": [],
+    "hasEnquiries": "",
+    "eligibilityCriteria": "",
+    "contractPeriod": {"$ref": "#/definitions/Period"},
+    "acceleratedProcedure": {"$ref": "#/definitions/AcceleratedProcedure"},
+    "designContest": {"$ref": "#/definitions/DesignContest"},
+    "electronicWorkflows": {"$ref": "#/definitions/ElectronicWorkflows"},
+    "jointProcurement": {"$ref": "#/definitions/JointProcurement"},
+    "procedureOutsourcing": {"$ref": "#/definitions/ProcedureOutsorcing"},
+    "framework": {"$ref": "#/definitions/Framework"},
+    "dynamicPurchasingSystem": {"$ref": "#/definitions/DynamicPurchasingSystem"},
+    "legalBasis": ""
+  },
+  "parties": [ {"$ref": "#/definitions/Organization"} ],
+  "relatedProcesses": [
+    { "$ref": "#/definitions/RelatedProcess" }
+  ]
+}
+
+```
 
 ## **Command model**
 

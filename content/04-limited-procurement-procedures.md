@@ -80,7 +80,7 @@ CN described as Record Package consists of four (at least) or more Release Packa
 ## Query models
 
 ### ontractNoticeParent (cnParent) Query Model
-[](tables/cn_parent_query_model.csv)
+[](/tables/cn_parent_query_model.csv)
 
 ### ‘cnParent’ as Compiled Release
 ```

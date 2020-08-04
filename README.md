@@ -2,7 +2,11 @@
 
 UNCITRAL OpenDigitalProcurement is an electronic procurement concept designed for end-to-end digital service supporting the entire public procurement process. It is a prototype developed by the EBRD UNCITRAL Initiative, a technical cooperation between the European Bank for Reconstruction and Development (EBRD) and the United Nations Commission for International Trade Law (UNCITRAL). This document contains the technical documentation that describes the implementation of architecture, data models, data standard and environment of the Architecture of the OCDS Open Source Central Unit of the electronic public procurement system.
 
-| ![img](/src/assets/icons/introduction5.png) | ![img](/src/assets/icons/introduction4.png) | |
+
+ d | d | d |d |d 
+------------- | -------------|---|---|---
+Based on global best practice in the 2011 UNCITRAL Model Law on Public Procurement | Compliant with the 2012 WTO GPA and the 2014 European Union Directives on Public Procurement |Designed to be interoperable with existing EU resources (ESPD, TED, e-Certis) | Easily customisable to support procurement of different public and commercial buyers | Designed based on  Advanced Open Contracting Data Standard
+
 
 The document explains in detail:
 - The design and development principles that guide the system implementation

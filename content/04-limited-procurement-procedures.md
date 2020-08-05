@@ -26,6 +26,8 @@ CN described as Record Package consists of four (at least) or more Release Packa
 * ‘cnDetails’ with all other CN data (depends on the starting point (stage): PN, PIN or CfC (PS/PQ/EV)
 * ‘eiDetails’ (hi-level common data of used EI)
 * At least one ‘fs’ (detailed information about used FS)
+<details closed>
+<summary>See details.</summary>
 
 ```json
 {
@@ -75,11 +77,12 @@ CN described as Record Package consists of four (at least) or more Release Packa
 }
 
 ```
-
+</details>  
 
 ## Query models
 
-### ontractNoticeParent (cnParent) Query Model
+### contractNoticeParent (cnParent) Query Model
+
 [](/tables/cn_parent_query_model.csv)
 
 ### ‘cnParent’ as Compiled Release

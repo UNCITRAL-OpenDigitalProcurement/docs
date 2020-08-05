@@ -83,18 +83,13 @@ CN described as Record Package consists of four (at least) or more Release Packa
 
 ### contractNoticeParent (cnParent) Query Model
 
-|   **title/description**	| **data-type**  	|
-|---	|---	|
-|  **ocid** 	|  string 	|
-| _A globally unique identifier for this part of Contracting Process_ |   	|
-|  **id** 	|  string 	|
-| _An identifier for this particular release of information for part of CP_ |   	|
-|  **date** 	|  date-time 	|
-| _The date this information is released_ |   	|
-|  **tag** 	|  string 	|
-| _A value from the releaseTag codelist that identifies the nature of the release being made_ |   	|
-|  **initiationType** 	|  string 	|
-| _String specifying the type of initiation process used for this contract, taken from the initiationType codelist_ |   	|
+|   **Schema**	|  	|
+|-----|-----|
+| **ocid**</br>_A globally unique identifier for this part of Contracting Process_ |  string 	|
+|  **id**</br>_An identifier for this particular release of information for part of CP_ |  string 	|
+|  **date**</br>_The date this information is released_	|  date-time 	|
+|  **tag**</br>	_A value from the releaseTag codelist that identifies the nature of the release being made_|  string 	|
+|  **initiationType**</br>_String specifying the type of initiation process used for this contract, taken from the initiationType codelist_ |  string 	|
 
 ### ‘cnParent’ as Compiled Release
 <details closed>

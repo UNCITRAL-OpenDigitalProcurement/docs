@@ -83,6 +83,9 @@ CN described as Record Package consists of four (at least) or more Release Packa
 [](/tables/cn_parent_query_model.csv)
 
 ### ‘cnParent’ as Compiled Release
+<details closed>
+<summary>See details.</summary>
+
 ```json
 {
   "ocid": "",
@@ -127,6 +130,9 @@ CN described as Record Package consists of four (at least) or more Release Packa
 }
 
 ```
+</details>  
+
+
 [](/tables/cn_details_query_model_t.csv)
 ## Command model
 

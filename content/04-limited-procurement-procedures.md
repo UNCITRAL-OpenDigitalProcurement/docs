@@ -85,12 +85,12 @@ CN described as Record Package consists of four (at least) or more Release Packa
 
 |   **Schema**	|  	|
 |-----|-----|
-|  ocid</br>_A globally unique identifier for this part of Contracting Process_ |  string 	|
-|  id</br>_An identifier for this particular release of information for part of CP_ |  string 	|
-|  date</br>_The date this information is released_	|  date-time 	|
-|  tag</br>	_A value from the releaseTag codelist that identifies the nature of the release being made_|  string 	|
-|  initiationType</br>_String specifying the type of initiation process used for this contract, taken from the initiationType codelist_ |  string 	|
-|  planning.rationale</br>_The rationale for the procurement provided in free text._ |  string 	|
+|  **ocid**</br>_A globally unique identifier for this part of Contracting Process_ |  string 	|
+|  **id**</br>_An identifier for this particular release of information for part of CP_ |  string 	|
+|  **date**</br>_The date this information is released_	|  date-time 	|
+|  **tag**</br>	_A value from the releaseTag codelist that identifies the nature of the release being made_|  string 	|
+|  **initiationType**</br>_String specifying the type of initiation process used for this contract, taken from the initiationType codelist_ |  string 	|
+|  **planning.rationale**</br>_The rationale for the procurement provided in free text._ |  string 	|
 |  planning.budget.description</br>_A short free text description of the budget source_ |  string 	|
 
 ### ‘cnParent’ as Compiled Release

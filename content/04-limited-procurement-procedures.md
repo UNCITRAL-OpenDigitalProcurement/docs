@@ -4,7 +4,7 @@
 CA is able to maintain the registration of information regarding single source procedures carried out of the eProcurement system and the execution of the process inside the system as well. Having entered the information regarding the procedure, CA enters information on the winner and the agreement. 
 The procurement process is carried out in the following sequence:
 
-![image|100x](https://raw.githubusercontent.com/UNCITRAL-OpenDigitalProcurement/docs/master/images/1.png)
+![image](https://raw.githubusercontent.com/UNCITRAL-OpenDigitalProcurement/docs/master/images/1.png)
 
 ## Publication of a decision on intent to conclude an agreement
 CA publishes the concluded agreement and enters information regarding the EO immediately. This information is published as a report on the concluded agreement. It is not possible to submit a complaint at this point.

@@ -87,6 +87,14 @@ CN described as Record Package consists of four (at least) or more Release Packa
 |---	|---	|
 |  **ocid** 	|  string 	|
 | _A globally unique identifier for this part of Contracting Process_ 	|   	|
+|  **ocid** 	|  string 	|
+| _A globally unique identifier for this part of Contracting Process_ 	|   	|
+|  **ocid** 	|  string 	|
+| _A globally unique identifier for this part of Contracting Process_ 	|   	|
+|  **ocid** 	|  string 	|
+| _A globally unique identifier for this part of Contracting Process_ 	|   	|
+|  **ocid** 	|  string 	|
+| _A globally unique identifier for this part of Contracting Process_ 	|   	|
 
 ### ‘cnParent’ as Compiled Release
 <details closed>

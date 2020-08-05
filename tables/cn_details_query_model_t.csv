@@ -1,6 +1,6 @@
-"ocid                                                                                                                                                     
+ocid                                                                                                                                                     
 A globally unique identifier for this part of Contracting Process",string
-"id                                                                                                                                                          
+id                                                                                                                                                          
 An identifier for this particular release of information for part of CP",string
-"date                                                                                                                                                     
+date                                                                                                                                                     
 The date this information is released",date-time

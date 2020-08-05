@@ -95,15 +95,10 @@ Use the JSON schema below to create the payload:
 
 Use the JSON schema below to create the payload:
 
-```json
+Use the JSON schema below to create the payload:
 
-  {
-    "data": {
-      "update-pn": "JSON-SCHEMA"
-    }
-  }
+[](/schema/limited_pn_create.schema.json)
 
-```
 **Result:**
 
 * Synchronous response from server: **202 Accepted**

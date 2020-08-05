@@ -96,6 +96,9 @@ CN described as Record Package consists of four (at least) or more Release Packa
 |  **planning.budget.isEuropeanUnionFunded** </br> _True/False field to indicate whether this procurement is related to a project and/or programme financed by EU_ |  boolean 	|
 |  **planning.budget.budgetBreakdown ([BudgetBreakdown](google.com))** </br> _Detailed budget breakdown to be expressed, covering multiple budget sources and multiple periods_ |  object 	|
 |  **tender.id** </br> _An identifier for this CP_ |  string 	|
+|  **tender.title** </br> _Title for this CP_ |  string 	|
+|  **tender.description** </br> _Description for this CP_ |  string 	|
+|  **tender.classification ([Classification](google.com))** </br> _The primary classification for the tender. Uses CPV Codelist_ |  object 	|
 
 
 ### ‘cnParent’ as Compiled Release

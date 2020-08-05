@@ -1,12 +1,12 @@
 # Introduction 
 
-UNCITRAL OpenDigitalProcurement is an electronic procurement concept designed for end-to-end digital service supporting the entire public procurement process. It is a prototype developed by the EBRD UNCITRAL Initiative, a technical cooperation between the European Bank for Reconstruction and Development (EBRD) and the United Nations Commission for International Trade Law (UNCITRAL). This document contains the technical documentation that describes the implementation of architecture, data models, data standard and environment of the Architecture of the OCDS Open Source Central Unit of the electronic public procurement system.
+UNCITRAL OpenDigitalProcurement is an electronic procurement toolkit designed for end-to-end digital service supporting the entire public procurement process. It is a prototype developed by the EBRD UNCITRAL Initiative, a technical cooperation between the European Bank for Reconstruction and Development (EBRD) and the United Nations Commission for International Trade Law (UNCITRAL). This document contains the technical documentation that describes the implementation of architecture, data models, data standard and environment of the Architecture of the OCDS Open Source Central Unit of the electronic public procurement system.
 
+The following key-features are applied for the development of the architecture. These ensure reusability in other context and implementing different technologies while guaranteeing the interoperability with other systems and being compliant with main standard regulations in public procurement:
 
  d | d | d |d |d 
 ------------- | -------------|---|---|---
 Based on global best practice in the 2011 UNCITRAL Model Law on Public Procurement | Compliant with the 2012 WTO GPA and the 2014 European Union Directives on Public Procurement |Designed to be interoperable with existing EU resources (ESPD, TED, e-Certis) | Easily customisable to support procurement of different public and commercial buyers | Designed based on  Advanced Open Contracting Data Standard
-
 
 The document explains in detail:
 - The design and development principles that guide the system implementation
@@ -14,15 +14,40 @@ The document explains in detail:
 - The business process engine that acts as logical layer for identifying an event, and then selecting and executing the appropriate reaction
 - The system API and the processes to consume information from the system as well as description of system features to allow its use from endpoints (retrieving information, creating objects, updating information, etc.)
 
-## General design
+## Background
+
+### Executive summary
 
 Generally electronic public procurement system consists of an open source central unit, a web-portal and several networking e-commerce platforms (NEPPs), and it uses an [Open Contracting Data Standard](https://standard.open-contracting.org) (OCDS) and based on a concept of open source distributed architecture in order to guarantee data standardisation and ensure user trust in data exchange accuracy.
 
-Concept provides digital procurement services to end users – contracting authorities and economic operators through the NEPPs. The central unit serves as an interoperable online data exchange and a transaction repository for linked NEPPs. Data collected by the central unit is displayed in real time in the web-portal, which is accessible and searchable. This web-portal serves as a single point of access to all ‘collected at source’ procurement information, including electronic bidding. It is automatically synchronised in real time between all network members – the central unit, web portal, NEPPs, and e-government services and digital registers, when available.
+Toolkit provides digital procurement services to end users – contracting authorities and economic operators through the NEPPs. The central unit serves as an interoperable online data exchange and a transaction repository for linked NEPPs. Data collected by the central unit is displayed in real time in the web-portal, which is accessible and searchable. This web-portal serves as a single point of access to all ‘collected at source’ procurement information, including electronic bidding. It is automatically synchronised in real time between all network members – the central unit, web portal, NEPPs, and e-government services and digital registers, when available.
 
-MTender offers an end-to-end electronic procurement system with the three main characteristics of:
+Toolkit offers an end-to-end electronic procurement system with the three main characteristics of:
 - modularity, which enables flexibility, self-executability and high levels of data resilience
 - networked interoperability of the digital procurement solution, which allows for its open multi-platform implementation
 - a transparent and comprehensive digital solution with structured transactional data, which allows for further public procurement process analyses
+
+### Multi-platform networking model
+Any system based on this architecture will consists of a CDU that communicates in real time with several NEPPs and external information systems (eGov services) that ensure complete digitization of public procurement procedures. CDU consolidates and distributes all data entered and generated by NEPPs, and performs all transactions, processes and functionalities of the lifecycle and the NEPPs are serve as a user-interface - frolm registration of user account, through UI for all transactions processes and functionalities of lifecycle, up to ability of end-users to use needed eGov Services.
+
+#### End-to-end public procurement processes
+The functionalities of the system based on this architecture from CDU perspective will cover the entire procurement process, from procurement planning to billing and public procurement payments. Online tools will make the system easier for all end-users and will generate process improvements and significant benefits.
+
+#### Interoperability with eGov Services
+This architecture designed to ensure interoperability with existing and future eGovernment services and local national public registers. This approach guarantees a modern and advanced eProcurement system with comprehensive functionalities, but without presenting huge risk or expense since eGovernment services have already been significantly developed in most countries.
+
+#### Open source, open data and open contracting data standards.
+This architecture designed for a stack of open-source technologies to foster transparency and accountability of public procurement by incorporating open data concept and Open Contracting Data Standard. Openness of data shall help building citizens’ and economic operators’ trust in the Government, in efficiency of public procurement management and discourage any corrupt practices.
+
+#### Split-level architecture
+Involves independent design of systems’ components in compliance with interface standards between levels, which facilitates future incorporation of new services, evolution of the different functionalities and, in general, scalability of the system.
+
+#### Reliable data
+Any data shall be entered into the system through authorised and authenticated channels only.
+
+#### Extensibility
+Possibility to expand and supplement the system based on this Architecture with new functions or improve the existing ones.
+
+## Design and development principles
 
 For additional information and the technical documentation of the UNCITRAL OpenDigitalProcurement see [documentation section] (#/content)

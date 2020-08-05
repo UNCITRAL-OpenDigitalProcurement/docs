@@ -83,7 +83,7 @@ CN described as Record Package consists of four (at least) or more Release Packa
 [](/tables/cn_parent_query_model.csv)
 
 ### ‘cnParent’ as Compiled Release
-```
+```json
 {
   "ocid": "",
   "id": "",
@@ -104,9 +104,9 @@ CN described as Record Package consists of four (at least) or more Release Packa
     "procurementMethodRationale": "",
     "procurementMethodAdditionalInfo": "",
     "mainProcurementCategory": "",
-    “procuringEntity”: {
-        “id”:””,
-        “name”: “”},
+    "procuringEntity": {
+        "id":"",
+        "name": ""},
     "additionalProcurementCategories": [],
     "hasEnquiries": "",
     "eligibilityCriteria": "",
@@ -127,7 +127,7 @@ CN described as Record Package consists of four (at least) or more Release Packa
 }
 
 ```
-
+[](/tables/cn_details_query_model_t.csv)
 ## Command model
 
 

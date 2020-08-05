@@ -1,5 +1,4 @@
 {
-    "schema": {
         "title": "Periodic Indicative Notice",
         "type": "object",
         "properties": {
@@ -1089,4 +1088,3 @@
           }
         }
       }
-}

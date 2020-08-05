@@ -52,7 +52,7 @@ Before creating a CP, follow these steps:
 
 Use the JSON schema below to create the payload:
 
-[pn-json](/schema/limited_pn_create.schema.json)
+[](/schema/limited_pn_create.schema.json)
 
 **Result:**
 

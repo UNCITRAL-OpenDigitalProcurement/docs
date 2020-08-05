@@ -4,7 +4,7 @@
 CA is able to maintain the registration of information regarding single source procedures carried out of the eProcurement system and the execution of the process inside the system as well. Having entered the information regarding the procedure, CA enters information on the winner and the agreement. 
 The procurement process is carried out in the following sequence:
 
-![image](https://raw.githubusercontent.com/UNCITRAL-OpenDigitalProcurement/docs/master/images/1.png)
+<img src="https://raw.githubusercontent.com/UNCITRAL-OpenDigitalProcurement/docs/master/images/1.png" width="80%" height="80%" />
 
 ## Publication of a decision on intent to conclude an agreement
 CA publishes the concluded agreement and enters information regarding the EO immediately. This information is published as a report on the concluded agreement. It is not possible to submit a complaint at this point.
@@ -83,7 +83,10 @@ CN described as Record Package consists of four (at least) or more Release Packa
 
 ### contractNoticeParent (cnParent) Query Model
 
-[](/tables/cn_parent_query_model.csv)
+|   title/description	| data-type  	|
+|---	|---	|
+|  ocid 	|  string 	|
+| A globally unique identifier for this part of Contracting Process  	|   	|
 
 ### ‘cnParent’ as Compiled Release
 <details closed>

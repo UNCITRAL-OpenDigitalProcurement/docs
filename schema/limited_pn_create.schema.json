@@ -1,1151 +1,1092 @@
 {
-    "data": {
-      "form": {
-        "schema": {
-          "title": "Periodic Indicative Notice",
-          "type": "object",
-          "properties": {
+    "schema": {
+        "title": "Periodic Indicative Notice",
+        "type": "object",
+        "properties": {
             "section1": {
-              "title": "Procedure Parties",
-              "description": "Information about all Parties involved in future contracting process",
-              "type": "object",
-              "properties": {
-                "procuringEntity": {
-                  "title": "Procuring Entity",
-                  "description": "Name and addresses",
-                  "type": "object",
-                  "properties": {
-                    "buyer": {
-                      "type": "object",
-                      "required": [
-                        "name"
-                      ],
-                      "properties": {
-                        "name": {
-                          "title": "Official Name",
-                          "type": "string",
-                          "readOnly": true,
-                          "ocds": "tender::object/procuringEntity::object/name::string"
-                        },
-                        "address": {
-                          "title": "Postal Address",
-                          "type": "object",
-                          "properties": {
-                            "location": {
-                              "title": "Location",
-                              "type": "object",
-                              "properties": {
-                                "country": {
-                                  "title": "Country",
-                                  "type": "object",
-                                  "source": "/country/MD?lang=en",
-                                  "required": [
-                                    "id",
-                                    "description"
-                                  ],
-                                  "properties": {
-                                    "id": {
-                                      "type": "string",
-                                      "readOnly": true,
-                                      "ocds": "tender::object/procuringEntity::object/address::object/addressDetails::object/country::object/id::string"
-                                    },
-                                    "description": {
-                                      "type": "string",
-                                      "readOnly": true,
-                                      "ocds": "tender::object/procuringEntity::object/address::object/addressDetails::object/country::object/description::string"
-                                    }
-                                  }
-                                },
-                                "region": {
-                                  "title": "Region",
-                                  "type": "object",
-                                  "source": "/region?lang=en&country=MD",
-                                  "required": [
-                                    "id",
-                                    "description"
-                                  ],
-                                  "properties": {
-                                    "id": {
-                                      "type": "string",
-                                      "readOnly": true,
-                                      "ocds": "tender::object/procuringEntity::object/address::object/addressDetails::object/region::object/id::string"
-                                    },
-                                    "description": {
-                                      "type": "string",
-                                      "readOnly": true,
-                                      "ocds": "tender::object/procuringEntity::object/address::object/addressDetails::object/region::object/description::string"
-                                    }
-                                  }
-                                },
-                                "locality": {
-                                  "type": "object",
-                                  "required": [
-                                    "localityType"
-                                  ],
-                                  "properties": {
-                                    "localityType": {
-                                      "title": "Specify town/locality",
-                                      "type": "string",
-                                      "enum": [
-                                        "from standarized list",
-                                        "by manual input"
-                                      ],
-                                      "readOnly": true
-                                    }
-                                  },
-                                  "dependencies": {
-                                    "localityType": {
-                                      "oneOf": [
-                                        {
-                                          "required": [
-                                            "localityType"
-                                          ],
-                                          "properties": {
-                                            "localityType": {
-                                              "enum": [
-                                                "from standarized list"
-                                              ]
-                                            },
-                                            "directory": {
-                                              "type": "object",
-                                              "properties": {
-                                                "locality": {
-                                                  "title": "Town/Locality",
-                                                  "type": "object",
-                                                  "source": "/locality?lang=en&country=MD&region=1700000",
-                                                  "required": [
-                                                    "scheme",
-                                                    "id",
-                                                    "description"
-                                                  ],
-                                                  "properties": {
-                                                    "scheme": {
-                                                      "type": "string",
-                                                      "const": "CUATM",
-                                                      "readOnly": true,
-                                                      "ocds": "tender::object/procuringEntity::object/address::object/addressDetails::object/locality::object/scheme::string"
-                                                    },
-                                                    "id": {
-                                                      "type": "string",
-                                                      "readOnly": true,
-                                                      "ocds": "tender::object/procuringEntity::object/address::object/addressDetails::object/locality::object/id::string"
-                                                    },
-                                                    "description": {
-                                                      "type": "string",
-                                                      "readOnly": true,
-                                                      "ocds": "tender::object/procuringEntity::object/address::object/addressDetails::object/locality::object/description::string"
-                                                    }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        },
-                                        {
-                                          "required": [
-                                            "localityType"
-                                          ],
-                                          "properties": {
-                                            "localityType": {
-                                              "enum": [
-                                                "by manual input"
-                                              ]
-                                            },
-                                            "manual": {
-                                              "type": "object",
-                                              "properties": {
-                                                "locality": {
-                                                  "title": "Town/Locality",
-                                                  "type": "object",
-                                                  "required": [
-                                                    "scheme",
-                                                    "id",
-                                                    "description"
-                                                  ],
-                                                  "properties": {
-                                                    "scheme": {
-                                                      "type": "string",
-                                                      "const": "other",
-                                                      "readOnly": true,
-                                                      "ocds": "tender::object/procuringEntity::object/address::object/addressDetails::object/locality::object/scheme::string"
-                                                    },
-                                                    "id": {
-                                                      "type": "string",
-                                                      "const": "999999999",
-                                                      "readOnly": true,
-                                                      "ocds": "tender::object/procuringEntity::object/address::object/addressDetails::object/locality::object/id::string"
-                                                    },
-                                                    "description": {
-                                                      "type": "string",
-                                                      "readOnly": true,
-                                                      "ocds": "tender::object/procuringEntity::object/address::object/addressDetails::object/locality::object/description::string"
-                                                    }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      ]
-                                    }
-                                  }
-                                }
-                              }
-                            },
-                            "postalAddress": {
-                              "title": "Postal Address",
-                              "type": "object",
-                              "required": [
-                                "streetAddress"
-                              ],
-                              "properties": {
-                                "streetAddress": {
-                                  "title": "Street Address",
-                                  "type": "string",
-                                  "readOnly": true,
-                                  "ocds": "tender::object/procuringEntity::object/address::object/streetAddress::string"
-                                },
-                                "postalCode": {
-                                  "title": "Postal Code",
-                                  "type": "string",
-                                  "readOnly": true,
-                                  "ocds": "tender::object/procuringEntity::object/address::object/postalCode::string"
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "identifier": {
-                          "title": "National registration number",
-                          "type": "object",
-                          "required": [
-                            "scheme",
-                            "id",
-                            "legalName"
-                          ],
-                          "properties": {
-                            "scheme": {
-                              "title": "National Register",
-                              "type": "string",
-                              "readOnly": true,
-                              "source": "/registration-scheme?lang=en&country=MD",
-                              "ocds": "tender::object/procuringEntity::object/identifier::object/scheme::string"
-                            },
-                            "id": {
-                              "title": "Identifier",
-                              "type": "string",
-                              "readOnly": true,
-                              "ocds": "tender::object/procuringEntity::object/identifier::object/id::string"
-                            },
-                            "legalName": {
-                              "title": "Legal Name",
-                              "type": "string",
-                              "readOnly": true,
-                              "ocds": "tender::object/procuringEntity::object/identifier::object/legalName::string"
-                            },
-                            "uri": {
-                              "title": "Register URI",
-                              "type": "string",
-                              "readOnly": true,
-                              "ocds": "tender::object/procuringEntity::object/identifier::object/uri::string"
-                            }
-                          }
-                        },
-                        "additionalIdentifiers": {
-                          "title": "Additional Identifiers",
-                          "type": "array",
-                          "items": {
-                            "type": "object",
-                            "required": [
-                              "scheme",
-                              "id",
-                              "legalName"
-                            ],
-                            "properties": {
-                              "scheme": {
-                                "title": "Additional Register",
-                                "type": "string",
-                                "readOnly": true,
-                                "source": "/registration-scheme?lang=en&country=MD",
-                                "ocds": "tender::object/procuringEntity::object/additionalIdentifiers::array[object]/scheme::string"
-                              },
-                              "id": {
-                                "title": "Identifier",
-                                "type": "string",
-                                "readOnly": true,
-                                "ocds": "tender::object/procuringEntity::object/additionalIdentifiers::array[object]/id::string"
-                              },
-                              "legalName": {
-                                "title": "Legal name",
-                                "type": "string",
-                                "readOnly": true,
-                                "ocds": "tender::object/procuringEntity::object/additionalIdentifiers::array[object]/legalName::string"
-                              },
-                              "uri": {
-                                "title": "Register URI",
-                                "type": "string",
-                                "readOnly": true,
-                                "ocds": "tender::object/procuringEntity::object/additionalIdentifiers::array[object]/uri::string"
-                              }
-                            }
-                          }
-                        },
-                        "contactPoint": {
-                          "title": "Contact point/representative",
-                          "type": "object",
-                          "properties": {
+                "title": "Procedure Parties",
+                "description": "Information about all Parties involved in future contracting process",
+                "type": "object",
+                "properties": {
+                    "procuringEntity": {
+                        "title": "Procuring Entity",
+                        "description": "Name and addresses",
+                        "type": "object",
+                        "properties": {
                             "buyer": {
-                              "type": "object",
-                              "properties": {
-                                "person": {
-                                  "title": "Contact person",
-                                  "type": "object",
-                                  "required": [
-                                    "name"
-                                  ],
-                                  "properties": {
-                                    "name": {
-                                      "title": "Full name",
-                                      "type": "string",
-                                      "readOnly": true,
-                                      "ocds": "tender::object/procuringEntity::object/contactPoint::object/name::string"
-                                    },
-                                    "url": {
-                                      "title": "URL",
-                                      "type": "string",
-                                      "readOnly": true,
-                                      "ocds": "tender::object/procuringEntity::object/contactPoint::object/url::string"
-                                    }
-                                  }
-                                },
-                                "contacts": {
-                                  "title": "Contact person contacts",
-                                  "type": "object",
-                                  "required": [
-                                    "telephone",
-                                    "email"
-                                  ],
-                                  "properties": {
-                                    "telephone": {
-                                      "title": "Telephone",
-                                      "type": "string",
-                                      "readOnly": true,
-                                      "ocds": "tender::object/procuringEntity::object/contactPoint::object/telephone::string"
-                                    },
-                                    "email": {
-                                      "title": "E-mail",
-                                      "type": "string",
-                                      "readOnly": true,
-                                      "ocds": "tender::object/procuringEntity::object/contactPoint::object/email::string"
-                                    },
-                                    "faxNumber": {
-                                      "title": "Fax number",
-                                      "type": "string",
-                                      "readOnly": true,
-                                      "ocds": "tender::object/procuringEntity::object/contactPoint::object/faxNumber::string"
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            },
-            "section2": {
-              "title": "Object",
-              "type": "object",
-              "properties": {
-                "procurementScope": {
-                  "title": "Scope of procurement",
-                  "description": "Definition of subject of procuremement",
-                  "type": "object",
-                  "required": [
-                    "title",
-                    "description"
-                  ],
-                  "properties": {
-                    "title": {
-                      "title": "Procurement title",
-                      "description": "An overall title for this indicative notice",
-                      "type": "string",
-                      "ocds": "tender::object/title::string"
-                    },
-                    "description": {
-                      "title": "Short description",
-                      "description": "An overall description for this indicative notice",
-                      "type": "string",
-                      "ocds": "tender::object/description::string"
-                    }
-                  }
-                },
-                "documents": {
-                  "title": "Documents of Tender",
-                  "description": "All documents and attachments related to the tender, including any notices",
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "required": [
-                      "documentId",
-                      "documentType"
-                    ],
-                    "properties": {
-                      "file": {
-                        "title": "Select file",
-                        "type": "string"
-                      },
-                      "documentId": {
-                        "type": "string",
-                        "ocds": "tender::object/documents::array[object]/id::string"
-                      },
-                      "title": {
-                        "title": "Document name",
-                        "type": "string",
-                        "ocds": "tender::object/documents::array[object]/title::string"
-                      },
-                      "description": {
-                        "title": "Brief description for this document",
-                        "type": "string",
-                        "ocds": "tender::object/documents::array[object]/description::string"
-                      },
-                      "documentType": {
-                        "title": "Document type",
-                        "type": "string",
-                        "enum": [
-                          "tenderNotice",
-                          "procurementPlan",
-                          "biddingDocuments",
-                          "technicalSpecifications",
-                          "evaluationCriteria",
-                          "contractDraft",
-                          "eligibilityCriteria",
-                          "clarifications",
-                          "riskProvisions",
-                          "complaints",
-                          "billOfQuantity",
-                          "conflictOfInterest",
-                          "illustration",
-                          "cancellationDetails",
-                          "shortlistedFirms",
-                          "evaluationReports",
-                          "contractArrangements",
-                          "contractGuarantees"
-                        ],
-                        "enumNames": [
-                          "Contract Notice",
-                          "Procurement Plan",
-                          "Tender Documents",
-                          "Technical Specifications",
-                          "Evaluation Criteria",
-                          "Draft contract - special conditions",
-                          "Eligibility Criteria",
-                          "Clarification of Tender Documents",
-                          "Provisions for management of risks and liabilities",
-                          "Complaints and review decisions",
-                          "Bill Of Quantity",
-                          "Identified conflicts of interest uncovered",
-                          "Illustration",
-                          "Details of cancellation",
-                          "Shortlisted Firms",
-                          "Evaluation report",
-                          "Arrangements for closing or termination of the contract",
-                          "Contract Performance Guarantees"
-                        ],
-                        "ocds": "tender::object/documents::array[object]/documentType::string"
-                      }
-                    }
-                  }
-                },
-                "lots": {
-                  "title": "Information about the lots",
-                  "description": "Information about lots in which the procurement procedure under this contracting process will be divided",
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "description": {
-                        "title": "Set of lots",
-                        "description": "Detailed specification for all lots under this contracting process",
-                        "type": "object",
-                        "required": [
-                          "lotId",
-                          "title",
-                          "description"
-                        ],
-                        "properties": {
-                          "lotId": {
-                            "type": "string",
-                            "ocds": "tender::object/lots::array[object]/id::string"
-                          },
-                          "internalId": {
-                            "title": "Internal lot identifier",
-                            "type": "string",
-                            "ocds": "tender::object/lots::array[object]/internalId::string"
-                          },
-                          "title": {
-                            "title": "Lot Title",
-                            "description": "An overall title for this specific lot",
-                            "type": "string",
-                            "ocds": "tender::object/lots::array[object]/title::string"
-                          },
-                          "description": {
-                            "title": "Short description of lot",
-                            "description": "Brief overall description for this specific lot",
-                            "type": "string",
-                            "ocds": "tender::object/lots::array[object]/description::string"
-                          },
-                          "value": {
-                            "title": "Estimated value",
-                            "description": "Procurement expected price without VAT",
-                            "type": "object",
-                            "required": [
-                              "amount",
-                              "currency"
-                            ],
-                            "properties": {
-                              "amount": {
-                                "title": "Amount",
-                                "type": "number",
-                                "min": 0.01,
-                                "ocds": "tender::object/lots::array[object]/value::object/amount::number"
-                              },
-                              "currency": {
-                                "title": "Currency",
-                                "type": "string",
-                                "default": "MDL",
-                                "readOnly": true,
-                                "ocds": "tender::object/lots::array[object]/value::object/currency::string"
-                              }
-                            }
-                          }
-                        }
-                      },
-                      "performance": {
-                        "title": "Performance / Delivery",
-                        "description": "Place of performance",
-                        "type": "object",
-                        "properties": {
-                          "placeOfPerformance": {
-                            "type": "object",
-                            "properties": {
-                              "address": {
-                                "title": "Address",
                                 "type": "object",
-                                "properties": {
-                                  "location": {
-                                    "title": "Location",
-                                    "type": "object",
-                                    "properties": {
-                                      "country": {
-                                        "title": "Country",
-                                        "type": "object",
-                                        "source": "/country?lang=en",
-                                        "required": [
-                                          "id",
-                                          "description"
-                                        ],
-                                        "properties": {
-                                          "id": {
-                                            "type": "string",
-                                            "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/addressDetails::object/country::object/id::string"
-                                          },
-                                          "description": {
-                                            "type": "string",
-                                            "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/addressDetails::object/country::object/description::string"
-                                          }
-                                        }
-                                      },
-                                      "region": {
-                                        "title": "Region",
-                                        "type": "object",
-                                        "source": "/region?lang=en&country=$country$",
-                                        "dependentFields": {
-                                          "country": "section2.lots[lotIndex].performance.placeOfPerformance.address.location.country.id"
-                                        },
-                                        "required": [
-                                          "id",
-                                          "description"
-                                        ],
-                                        "properties": {
-                                          "id": {
-                                            "type": "string",
-                                            "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/addressDetails::object/region::object/id::string"
-                                          },
-                                          "description": {
-                                            "type": "string",
-                                            "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/addressDetails::object/region::object/description::string"
-                                          }
-                                        }
-                                      },
-                                      "locality": {
-                                        "type": "object",
-                                        "required": [
-                                          "localityType"
-                                        ],
-                                        "properties": {
-                                          "localityType": {
-                                            "title": "Specify town/locality",
-                                            "type": "string",
-                                            "enum": [
-                                              "from standarized list",
-                                              "by manual input"
-                                            ]
-                                          }
-                                        },
-                                        "dependencies": {
-                                          "localityType": {
-                                            "oneOf": [
-                                              {
-                                                "required": [
-                                                  "localityType"
-                                                ],
-                                                "properties": {
-                                                  "localityType": {
-                                                    "enum": [
-                                                      "from standarized list"
-                                                    ]
-                                                  },
-                                                  "directory": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                      "locality": {
-                                                        "title": "Town/Locality",
-                                                        "type": "object",
-                                                        "source": "/locality?lang=en&country=$country$&region=$region$",
-                                                        "dependentFields": {
-                                                          "country": "section2.lots[lotIndex].performance.placeOfPerformance.address.location.country.id",
-                                                          "region": "section2.lots[lotIndex].performance.placeOfPerformance.address.location.region.id"
-                                                        },
-                                                        "required": [
-                                                          "scheme",
-                                                          "id",
-                                                          "description"
-                                                        ],
-                                                        "properties": {
-                                                          "scheme": {
-                                                            "type": "string",
-                                                            "const": "CUATM",
-                                                            "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/addressDetails::object/locality::object/scheme::string"
-                                                          },
-                                                          "id": {
-                                                            "type": "string",
-                                                            "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/addressDetails::object/locality::object/id::string"
-                                                          },
-                                                          "description": {
-                                                            "type": "string",
-                                                            "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/addressDetails::object/locality::object/description::string"
-                                                          }
-                                                        }
-                                                      }
-                                                    }
-                                                  }
-                                                }
-                                              },
-                                              {
-                                                "required": [
-                                                  "localityType"
-                                                ],
-                                                "properties": {
-                                                  "localityType": {
-                                                    "enum": [
-                                                      "by manual input"
-                                                    ]
-                                                  },
-                                                  "manual": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                      "locality": {
-                                                        "title": "Town/Locality",
-                                                        "type": "object",
-                                                        "required": [
-                                                          "scheme",
-                                                          "id",
-                                                          "description"
-                                                        ],
-                                                        "properties": {
-                                                          "scheme": {
-                                                            "type": "string",
-                                                            "const": "other",
-                                                            "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/addressDetails::object/locality::object/scheme::string"
-                                                          },
-                                                          "id": {
-                                                            "type": "string",
-                                                            "const": "999999999",
-                                                            "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/addressDetails::object/locality::object/id::string"
-                                                          },
-                                                          "description": {
-                                                            "type": "string",
-                                                            "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/addressDetails::object/locality::object/description::string"
-                                                          }
-                                                        }
-                                                      }
-                                                    }
-                                                  }
-                                                }
-                                              }
-                                            ]
-                                          }
-                                        }
-                                      }
-                                    }
-                                  },
-                                  "postalAddress": {
-                                    "title": "Postal Address",
-                                    "type": "object",
-                                    "required": [
-                                      "streetAddress"
-                                    ],
-                                    "properties": {
-                                      "streetAddress": {
-                                        "title": "Street Address",
-                                        "type": "string",
-                                        "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/streetAddress::string"
-                                      },
-                                      "postalCode": {
-                                        "title": "Postal Code",
-                                        "type": "string",
-                                        "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/postalCode::string"
-                                      }
-                                    }
-                                  }
-                                }
-                              },
-                              "description": {
-                                "title": "Description",
-                                "description": "Further description of the place of performance of the contract",
-                                "type": "string",
-                                "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/description::string"
-                              }
-                            }
-                          },
-                          "deliveryPeriod": {
-                            "title": "Contract period",
-                            "description": "Duration of the contract, FA, DPS",
-                            "type": "object",
-                            "required": [
-                              "startDate",
-                              "endDate"
-                            ],
-                            "properties": {
-                              "startDate": {
-                                "title": "Start",
-                                "type": "string",
-                                "ocds": "tender::object/lots::array[object]/contractPeriod::object/startDate::string"
-                              },
-                              "endDate": {
-                                "title": "End",
-                                "type": "string",
-                                "ocds": "tender::object/lots::array[object]/contractPeriod::object/endDate::string"
-                              }
-                            }
-                          }
-                        }
-                      },
-                      "items": {
-                        "title": "Nomenclature of lot",
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "required": [
-                            "itemId",
-                            "relatedLot",
-                            "description"
-                          ],
-                          "properties": {
-                            "itemId": {
-                              "type": "string",
-                              "ocds": "tender::object/items::array[object]/id::string"
-                            },
-                            "relatedLot": {
-                              "type": "string",
-                              "ocds": "tender::object/items::array[object]/relatedLot::string"
-                            },
-                            "internalId": {
-                              "title": "Internal item identifier",
-                              "type": "string",
-                              "ocds": "tender::object/items::array[object]/internalId::string"
-                            },
-                            "description": {
-                              "title": "Item description",
-                              "type": "string",
-                              "ocds": "tender::object/items::array[object]/description::string"
-                            },
-                            "quantity": {
-                              "title": "Volume of supply",
-                              "type": "object",
-                              "required": [
-                                "quantity"
-                              ],
-                              "properties": {
-                                "quantity": {
-                                  "title": "Quantity",
-                                  "type": "number",
-                                  "ocds": "tender::object/items::array[object]/quantity::number"
-                                },
-                                "unitDetails": {
-                                  "type": "object",
-                                  "properties": {
-                                    "unitClass": {
-                                      "title": "Class of measure",
-                                      "type": "object",
-                                      "source": "/unit-class?lang=en",
-                                      "required": [
-                                        "id",
-                                        "description"
-                                      ],
-                                      "properties": {
-                                        "id": {
-                                          "type": "string"
-                                        },
-                                        "description": {
-                                          "type": "string"
-                                        }
-                                      }
-                                    },
-                                    "unit": {
-                                      "title": "Measurement unit name",
-                                      "type": "object",
-                                      "source": "/unit?lang=en&unitClass=$unitClass$",
-                                      "dependentFields": {
-                                        "unitClass": "section2.lots[lotIndex].items[itemIndex].quantity.unitDetails.unitClass.id"
-                                      },
-                                      "required": [
-                                        "id",
-                                        "description"
-                                      ],
-                                      "properties": {
-                                        "id": {
-                                          "type": "string",
-                                          "ocds": "tender::object/items::array[object]/unit::object/id::string"
-                                        },
-                                        "description": {
-                                          "type": "string",
-                                          "ocds": "tender::object/items::array[object]/unit::object/name::string"
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            },
-                            "classification": {
-                              "title": "Classification",
-                              "type": "object",
-                              "source": "/cpv?lang=en&code=45100000-8",
-                              "required": [
-                                "scheme",
-                                "id",
-                                "description",
-                                "title"
-                              ],
-                              "properties": {
-                                "scheme": {
-                                  "title": "Classifier",
-                                  "type": "string",
-                                  "default": "CPV",
-                                  "ocds": "tender::object/items::array[object]/classification::object/scheme::string"
-                                },
-                                "id": {
-                                  "title": "CPV code",
-                                  "type": "string",
-                                  "ocds": "tender::object/items::array[object]/classification::object/id::string"
-                                },
-                                "description": {
-                                  "title": "CPV description",
-                                  "type": "string",
-                                  "ocds": "tender::object/items::array[object]/classification::object/description::string"
-                                },
-                                "title": {
-                                  "type": "string"
-                                }
-                              }
-                            },
-                            "additionalClassifications": {
-                              "title": "Supplementary classification",
-                              "type": "array",
-                              "items": {
-                                "type": "object",
-                                "source": "/cpvs?lang=en",
                                 "required": [
-                                  "scheme",
-                                  "id",
-                                  "description",
-                                  "title"
+                                    "name"
                                 ],
                                 "properties": {
-                                  "scheme": {
-                                    "title": "Classifier",
-                                    "type": "string",
-                                    "default": "CPVS",
-                                    "ocds": "tender::object/items::array[object]/additionalClassifications::array[object]/scheme::string"
-                                  },
-                                  "id": {
-                                    "title": "CPVs code",
-                                    "type": "string",
-                                    "ocds": "tender::object/items::array[object]/additionalClassifications::array[object]/id::string"
-                                  },
-                                  "description": {
-                                    "title": "CPVs name",
-                                    "type": "string",
-                                    "ocds": "tender::object/items::array[object]/additionalClassifications::array[object]/description::string"
-                                  },
-                                  "title": {
-                                    "type": "string"
-                                  }
+                                    "name": {
+                                        "title": "Official Name",
+                                        "type": "string",
+                                        "readOnly": true,
+                                        "ocds": "tender::object/procuringEntity::object/name::string"
+                                    },
+                                    "address": {
+                                        "title": "Postal Address",
+                                        "type": "object",
+                                        "properties": {
+                                            "location": {
+                                                "title": "Location",
+                                                "type": "object",
+                                                "properties": {
+                                                    "country": {
+                                                        "title": "Country",
+                                                        "type": "object",
+                                                        "source": "/country/MD?lang=en",
+                                                        "required": [
+                                                            "id",
+                                                            "description"
+                                                        ],
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "string",
+                                                                "readOnly": true,
+                                                                "ocds": "tender::object/procuringEntity::object/address::object/addressDetails::object/country::object/id::string"
+                                                            },
+                                                            "description": {
+                                                                "type": "string",
+                                                                "readOnly": true,
+                                                                "ocds": "tender::object/procuringEntity::object/address::object/addressDetails::object/country::object/description::string"
+                                                            }
+                                                        }
+                                                    },
+                                                    "region": {
+                                                        "title": "Region",
+                                                        "type": "object",
+                                                        "source": "/region?lang=en&country=MD",
+                                                        "required": [
+                                                            "id",
+                                                            "description"
+                                                        ],
+                                                        "properties": {
+                                                            "id": {
+                                                                "type": "string",
+                                                                "readOnly": true,
+                                                                "ocds": "tender::object/procuringEntity::object/address::object/addressDetails::object/region::object/id::string"
+                                                            },
+                                                            "description": {
+                                                                "type": "string",
+                                                                "readOnly": true,
+                                                                "ocds": "tender::object/procuringEntity::object/address::object/addressDetails::object/region::object/description::string"
+                                                            }
+                                                        }
+                                                    },
+                                                    "locality": {
+                                                        "type": "object",
+                                                        "required": [
+                                                            "localityType"
+                                                        ],
+                                                        "properties": {
+                                                            "localityType": {
+                                                                "title": "Specify town/locality",
+                                                                "type": "string",
+                                                                "enum": [
+                                                                    "from standarized list",
+                                                                    "by manual input"
+                                                                ],
+                                                                "readOnly": true
+                                                            }
+                                                        },
+                                                        "dependencies": {
+                                                            "localityType": {
+                                                                "oneOf": [
+                                                                    {
+                                                                        "required": [
+                                                                            "localityType"
+                                                                        ],
+                                                                        "properties": {
+                                                                            "localityType": {
+                                                                                "enum": [
+                                                                                    "from standarized list"
+                                                                                ]
+                                                                            },
+                                                                            "directory": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                    "locality": {
+                                                                                        "title": "Town/Locality",
+                                                                                        "type": "object",
+                                                                                        "source": "/locality?lang=en&country=MD&region=1700000",
+                                                                                        "required": [
+                                                                                            "scheme",
+                                                                                            "id",
+                                                                                            "description"
+                                                                                        ],
+                                                                                        "properties": {
+                                                                                            "scheme": {
+                                                                                                "type": "string",
+                                                                                                "const": "CUATM",
+                                                                                                "readOnly": true,
+                                                                                                "ocds": "tender::object/procuringEntity::object/address::object/addressDetails::object/locality::object/scheme::string"
+                                                                                            },
+                                                                                            "id": {
+                                                                                                "type": "string",
+                                                                                                "readOnly": true,
+                                                                                                "ocds": "tender::object/procuringEntity::object/address::object/addressDetails::object/locality::object/id::string"
+                                                                                            },
+                                                                                            "description": {
+                                                                                                "type": "string",
+                                                                                                "readOnly": true,
+                                                                                                "ocds": "tender::object/procuringEntity::object/address::object/addressDetails::object/locality::object/description::string"
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "required": [
+                                                                            "localityType"
+                                                                        ],
+                                                                        "properties": {
+                                                                            "localityType": {
+                                                                                "enum": [
+                                                                                    "by manual input"
+                                                                                ]
+                                                                            },
+                                                                            "manual": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                    "locality": {
+                                                                                        "title": "Town/Locality",
+                                                                                        "type": "object",
+                                                                                        "required": [
+                                                                                            "scheme",
+                                                                                            "id",
+                                                                                            "description"
+                                                                                        ],
+                                                                                        "properties": {
+                                                                                            "scheme": {
+                                                                                                "type": "string",
+                                                                                                "const": "other",
+                                                                                                "readOnly": true,
+                                                                                                "ocds": "tender::object/procuringEntity::object/address::object/addressDetails::object/locality::object/scheme::string"
+                                                                                            },
+                                                                                            "id": {
+                                                                                                "type": "string",
+                                                                                                "const": "999999999",
+                                                                                                "readOnly": true,
+                                                                                                "ocds": "tender::object/procuringEntity::object/address::object/addressDetails::object/locality::object/id::string"
+                                                                                            },
+                                                                                            "description": {
+                                                                                                "type": "string",
+                                                                                                "readOnly": true,
+                                                                                                "ocds": "tender::object/procuringEntity::object/address::object/addressDetails::object/locality::object/description::string"
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "postalAddress": {
+                                                "title": "Postal Address",
+                                                "type": "object",
+                                                "required": [
+                                                    "streetAddress"
+                                                ],
+                                                "properties": {
+                                                    "streetAddress": {
+                                                        "title": "Street Address",
+                                                        "type": "string",
+                                                        "readOnly": true,
+                                                        "ocds": "tender::object/procuringEntity::object/address::object/streetAddress::string"
+                                                    },
+                                                    "postalCode": {
+                                                        "title": "Postal Code",
+                                                        "type": "string",
+                                                        "readOnly": true,
+                                                        "ocds": "tender::object/procuringEntity::object/address::object/postalCode::string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "identifier": {
+                                        "title": "National registration number",
+                                        "type": "object",
+                                        "required": [
+                                            "scheme",
+                                            "id",
+                                            "legalName"
+                                        ],
+                                        "properties": {
+                                            "scheme": {
+                                                "title": "National Register",
+                                                "type": "string",
+                                                "readOnly": true,
+                                                "source": "/registration-scheme?lang=en&country=MD",
+                                                "ocds": "tender::object/procuringEntity::object/identifier::object/scheme::string"
+                                            },
+                                            "id": {
+                                                "title": "Identifier",
+                                                "type": "string",
+                                                "readOnly": true,
+                                                "ocds": "tender::object/procuringEntity::object/identifier::object/id::string"
+                                            },
+                                            "legalName": {
+                                                "title": "Legal Name",
+                                                "type": "string",
+                                                "readOnly": true,
+                                                "ocds": "tender::object/procuringEntity::object/identifier::object/legalName::string"
+                                            },
+                                            "uri": {
+                                                "title": "Register URI",
+                                                "type": "string",
+                                                "readOnly": true,
+                                                "ocds": "tender::object/procuringEntity::object/identifier::object/uri::string"
+                                            }
+                                        }
+                                    },
+                                    "additionalIdentifiers": {
+                                        "title": "Additional Identifiers",
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "required": [
+                                                "scheme",
+                                                "id",
+                                                "legalName"
+                                            ],
+                                            "properties": {
+                                                "scheme": {
+                                                    "title": "Additional Register",
+                                                    "type": "string",
+                                                    "readOnly": true,
+                                                    "source": "/registration-scheme?lang=en&country=MD",
+                                                    "ocds": "tender::object/procuringEntity::object/additionalIdentifiers::array[object]/scheme::string"
+                                                },
+                                                "id": {
+                                                    "title": "Identifier",
+                                                    "type": "string",
+                                                    "readOnly": true,
+                                                    "ocds": "tender::object/procuringEntity::object/additionalIdentifiers::array[object]/id::string"
+                                                },
+                                                "legalName": {
+                                                    "title": "Legal name",
+                                                    "type": "string",
+                                                    "readOnly": true,
+                                                    "ocds": "tender::object/procuringEntity::object/additionalIdentifiers::array[object]/legalName::string"
+                                                },
+                                                "uri": {
+                                                    "title": "Register URI",
+                                                    "type": "string",
+                                                    "readOnly": true,
+                                                    "ocds": "tender::object/procuringEntity::object/additionalIdentifiers::array[object]/uri::string"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "contactPoint": {
+                                        "title": "Contact point/representative",
+                                        "type": "object",
+                                        "properties": {
+                                            "buyer": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "person": {
+                                                        "title": "Contact person",
+                                                        "type": "object",
+                                                        "required": [
+                                                            "name"
+                                                        ],
+                                                        "properties": {
+                                                            "name": {
+                                                                "title": "Full name",
+                                                                "type": "string",
+                                                                "readOnly": true,
+                                                                "ocds": "tender::object/procuringEntity::object/contactPoint::object/name::string"
+                                                            },
+                                                            "url": {
+                                                                "title": "URL",
+                                                                "type": "string",
+                                                                "readOnly": true,
+                                                                "ocds": "tender::object/procuringEntity::object/contactPoint::object/url::string"
+                                                            }
+                                                        }
+                                                    },
+                                                    "contacts": {
+                                                        "title": "Contact person contacts",
+                                                        "type": "object",
+                                                        "required": [
+                                                            "telephone",
+                                                            "email"
+                                                        ],
+                                                        "properties": {
+                                                            "telephone": {
+                                                                "title": "Telephone",
+                                                                "type": "string",
+                                                                "readOnly": true,
+                                                                "ocds": "tender::object/procuringEntity::object/contactPoint::object/telephone::string"
+                                                            },
+                                                            "email": {
+                                                                "title": "E-mail",
+                                                                "type": "string",
+                                                                "readOnly": true,
+                                                                "ocds": "tender::object/procuringEntity::object/contactPoint::object/email::string"
+                                                            },
+                                                            "faxNumber": {
+                                                                "title": "Fax number",
+                                                                "type": "string",
+                                                                "readOnly": true,
+                                                                "ocds": "tender::object/procuringEntity::object/contactPoint::object/faxNumber::string"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
-                              }
                             }
-                          }
                         }
-                      },
-                      "documents": {
-                        "title": "Documents related to this lot",
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "required": [
-                            "documentId",
-                            "documentType"
-                          ],
-                          "properties": {
-                            "file": {
-                              "title": "Select file",
-                              "type": "string"
-                            },
-                            "documentId": {
-                              "type": "string",
-                              "ocds": "tender::object/documents::array[object]/id::string"
-                            },
-                            "title": {
-                              "title": "Document title",
-                              "type": "string",
-                              "ocds": "tender::object/documents::array[object]/title::string"
-                            },
-                            "description": {
-                              "title": "Brief description for the document",
-                              "type": "string",
-                              "ocds": "tender::object/documents::array[object]/description::string"
-                            },
-                            "documentType": {
-                              "title": "Document type",
-                              "type": "string",
-                              "enum": [
-                                "tenderNotice",
-                                "procurementPlan",
-                                "biddingDocuments",
-                                "technicalSpecifications",
-                                "evaluationCriteria",
-                                "contractDraft",
-                                "eligibilityCriteria",
-                                "clarifications",
-                                "riskProvisions",
-                                "complaints",
-                                "billOfQuantity",
-                                "conflictOfInterest",
-                                "illustration",
-                                "cancellationDetails",
-                                "shortlistedFirms",
-                                "evaluationReports",
-                                "contractArrangements",
-                                "contractGuarantees"
-                              ],
-                              "enumNames": [
-                                "Contract Notice",
-                                "Procurement Plan",
-                                "Tender Documents",
-                                "Technical Specifications",
-                                "Evaluation Criteria",
-                                "Draft contract - special conditions",
-                                "Eligibility Criteria",
-                                "Clarification of Tender Documents",
-                                "Provisions for management of risks and liabilities",
-                                "Complaints and review decisions",
-                                "Bill Of Quantity",
-                                "Identified conflicts of interest uncovered",
-                                "Illustration",
-                                "Details of cancellation",
-                                "Shortlisted Firms",
-                                "Evaluation report",
-                                "Arrangements for closing or termination of the contract",
-                                "Contract Performance Guarantees"
-                              ],
-                              "ocds": "tender::object/documents::array[object]/documentType::string"
-                            },
-                            "relatedLots": {
-                              "type": "array",
-                              "minItems": 1,
-                              "maxItems": 1,
-                              "items": {
-                                "type": "string",
-                                "ocds": "tender::object/documents::array[object]/relatedLots::array[string]"
-                              }
-                            }
-                          }
-                        }
-                      }
                     }
-                  }
                 }
-              }
             },
-            "section4": {
-              "title": "Procurement procedure description",
-              "type": "object",
-              "properties": {
-                "method": {
-                  "type": "object",
-                  "required": [
-                    "legalBasis"
-                  ],
-                  "properties": {
-                    "procurementMethodDetails": {
-                      "title": "Procuremement method",
-                      "description": "Procedure type",
-                      "type": "string",
-                      "source": "/pmd?lang=en&country=MD",
-                      "readOnly": true,
-                      "ocds": "tender::object/procurementMethodDetails::string"
-                    },
-                    "legalBasis": {
-                      "title": "Legal base coveres",
-                      "description": "Information about legal framework",
-                      "type": "string",
-                      "enum": [
-                        "DIRECTIVE_2014_23_EU",
-                        "DIRECTIVE_2014_24_EU",
-                        "DIRECTIVE_2014_25_EU",
-                        "DIRECTIVE_2009_81_EC",
-                        "REGULATION_966_2012",
-                        "NATIONAL_PROCUREMENT_LAW"
-                      ],
-                      "ocds": "tender::object/legalBasis::string"
-                    }
-                  }
-                },
-                "administrative": {
-                  "title": "Administrative information",
-                  "description": "Administrative details",
-                  "type": "object",
-                  "properties": {
-                    "validityPeriod": {
-                      "type": "object",
-                      "required": [
-                        "startDate"
-                      ],
-                      "properties": {
-                        "startDate": {
-                          "title": "Scheduled date for start of procedure",
-                          "type": "string",
-                          "ocds": "tender::object/tenderPeriod::object/startDate::string"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            },
-            "budget": {
-              "title": "Budget allocation",
-              "type": "object",
-              "properties": {
-                "budgetBreakdown": {
-                  "type": "array",
-                  "minItems": 1,
-                  "items": {
-                    "type": "object",
-                    "required": [
-                      "id"
-                    ],
-                    "properties": {
-                      "id": {
-                        "type": "string",
-                        "ocds": "planning::object/budget::object/budgetBreakdown::array[object]/id::string"
-                      },
-                      "budgetBreakdownAmount": {
+            "section2": {
+                "title": "Object",
+                "type": "object",
+                "properties": {
+                    "procurementScope": {
+                        "title": "Scope of procurement",
+                        "description": "Definition of subject of procuremement",
                         "type": "object",
                         "required": [
-                          "amount",
-                          "currency"
+                            "title",
+                            "description"
                         ],
                         "properties": {
-                          "amount": {
-                            "type": "number",
-                            "min": 0.01,
-                            "ocds": "planning::object/budget::object/budgetBreakdown::array[object]/amount::object/amount::number"
-                          },
-                          "currency": {
-                            "type": "string",
-                            "default": "MDL",
-                            "ocds": "planning::object/budget::object/budgetBreakdown::array[object]/amount::object/currency::string"
-                          }
+                            "title": {
+                                "title": "Procurement title",
+                                "description": "An overall title for this indicative notice",
+                                "type": "string",
+                                "ocds": "tender::object/title::string"
+                            },
+                            "description": {
+                                "title": "Short description",
+                                "description": "An overall description for this indicative notice",
+                                "type": "string",
+                                "ocds": "tender::object/description::string"
+                            }
                         }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "data": {
-          "section1": {
-            "procuringEntity": {
-              "buyer": {
-                "name": "LLC Petrusenko",
-                "address": {
-                  "location": {
-                    "country": {
-                      "id": "MD",
-                      "description": "Moldova, Republica"
                     },
-                    "region": {
-                      "id": "1700000",
-                      "description": "Cahul"
-                    },
-                    "locality": {
-                      "localityType": "from standarized list",
-                      "directory": {
-                        "locality": {
-                          "scheme": "CUATM",
-                          "id": "1701000",
-                          "description": "mun.Cahul"
+                    "documents": {
+                        "title": "Documents of Tender",
+                        "description": "All documents and attachments related to the tender, including any notices",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "documentId",
+                                "documentType"
+                            ],
+                            "properties": {
+                                "file": {
+                                    "title": "Select file",
+                                    "type": "string"
+                                },
+                                "documentId": {
+                                    "type": "string",
+                                    "ocds": "tender::object/documents::array[object]/id::string"
+                                },
+                                "title": {
+                                    "title": "Document name",
+                                    "type": "string",
+                                    "ocds": "tender::object/documents::array[object]/title::string"
+                                },
+                                "description": {
+                                    "title": "Brief description for this document",
+                                    "type": "string",
+                                    "ocds": "tender::object/documents::array[object]/description::string"
+                                },
+                                "documentType": {
+                                    "title": "Document type",
+                                    "type": "string",
+                                    "enum": [
+                                        "tenderNotice",
+                                        "procurementPlan",
+                                        "biddingDocuments",
+                                        "technicalSpecifications",
+                                        "evaluationCriteria",
+                                        "contractDraft",
+                                        "eligibilityCriteria",
+                                        "clarifications",
+                                        "riskProvisions",
+                                        "complaints",
+                                        "billOfQuantity",
+                                        "conflictOfInterest",
+                                        "illustration",
+                                        "cancellationDetails",
+                                        "shortlistedFirms",
+                                        "evaluationReports",
+                                        "contractArrangements",
+                                        "contractGuarantees"
+                                    ],
+                                    "enumNames": [
+                                        "Contract Notice",
+                                        "Procurement Plan",
+                                        "Tender Documents",
+                                        "Technical Specifications",
+                                        "Evaluation Criteria",
+                                        "Draft contract - special conditions",
+                                        "Eligibility Criteria",
+                                        "Clarification of Tender Documents",
+                                        "Provisions for management of risks and liabilities",
+                                        "Complaints and review decisions",
+                                        "Bill Of Quantity",
+                                        "Identified conflicts of interest uncovered",
+                                        "Illustration",
+                                        "Details of cancellation",
+                                        "Shortlisted Firms",
+                                        "Evaluation report",
+                                        "Arrangements for closing or termination of the contract",
+                                        "Contract Performance Guarantees"
+                                    ],
+                                    "ocds": "tender::object/documents::array[object]/documentType::string"
+                                }
+                            }
                         }
-                      }
-                    }
-                  },
-                  "postalAddress": {
-                    "streetAddress": "Zakrevskogo"
-                  }
-                },
-                "identifier": {
-                  "scheme": "MD-IDNO",
-                  "id": "380632074071",
-                  "legalName": "LLC Petrusenko"
-                },
-                "contactPoint": {
-                  "buyer": {
-                    "person": {
-                      "name": "Illia Petrusenko"
                     },
-                    "contacts": {
-                      "telephone": "+380632074071",
-                      "email": "illya.petrusenko@gmail.com"
+                    "lots": {
+                        "title": "Information about the lots",
+                        "description": "Information about lots in which the procurement procedure under this contracting process will be divided",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "description": {
+                                    "title": "Set of lots",
+                                    "description": "Detailed specification for all lots under this contracting process",
+                                    "type": "object",
+                                    "required": [
+                                        "lotId",
+                                        "title",
+                                        "description"
+                                    ],
+                                    "properties": {
+                                        "lotId": {
+                                            "type": "string",
+                                            "ocds": "tender::object/lots::array[object]/id::string"
+                                        },
+                                        "internalId": {
+                                            "title": "Internal lot identifier",
+                                            "type": "string",
+                                            "ocds": "tender::object/lots::array[object]/internalId::string"
+                                        },
+                                        "title": {
+                                            "title": "Lot Title",
+                                            "description": "An overall title for this specific lot",
+                                            "type": "string",
+                                            "ocds": "tender::object/lots::array[object]/title::string"
+                                        },
+                                        "description": {
+                                            "title": "Short description of lot",
+                                            "description": "Brief overall description for this specific lot",
+                                            "type": "string",
+                                            "ocds": "tender::object/lots::array[object]/description::string"
+                                        },
+                                        "value": {
+                                            "title": "Estimated value",
+                                            "description": "Procurement expected price without VAT",
+                                            "type": "object",
+                                            "required": [
+                                                "amount",
+                                                "currency"
+                                            ],
+                                            "properties": {
+                                                "amount": {
+                                                    "title": "Amount",
+                                                    "type": "number",
+                                                    "min": 0.01,
+                                                    "ocds": "tender::object/lots::array[object]/value::object/amount::number"
+                                                },
+                                                "currency": {
+                                                    "title": "Currency",
+                                                    "type": "string",
+                                                    "default": "MDL",
+                                                    "readOnly": true,
+                                                    "ocds": "tender::object/lots::array[object]/value::object/currency::string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "performance": {
+                                    "title": "Performance / Delivery",
+                                    "description": "Place of performance",
+                                    "type": "object",
+                                    "properties": {
+                                        "placeOfPerformance": {
+                                            "type": "object",
+                                            "properties": {
+                                                "address": {
+                                                    "title": "Address",
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "location": {
+                                                            "title": "Location",
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "country": {
+                                                                    "title": "Country",
+                                                                    "type": "object",
+                                                                    "source": "/country?lang=en",
+                                                                    "required": [
+                                                                        "id",
+                                                                        "description"
+                                                                    ],
+                                                                    "properties": {
+                                                                        "id": {
+                                                                            "type": "string",
+                                                                            "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/addressDetails::object/country::object/id::string"
+                                                                        },
+                                                                        "description": {
+                                                                            "type": "string",
+                                                                            "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/addressDetails::object/country::object/description::string"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "region": {
+                                                                    "title": "Region",
+                                                                    "type": "object",
+                                                                    "source": "/region?lang=en&country=$country$",
+                                                                    "dependentFields": {
+                                                                        "country": "section2.lots[lotIndex].performance.placeOfPerformance.address.location.country.id"
+                                                                    },
+                                                                    "required": [
+                                                                        "id",
+                                                                        "description"
+                                                                    ],
+                                                                    "properties": {
+                                                                        "id": {
+                                                                            "type": "string",
+                                                                            "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/addressDetails::object/region::object/id::string"
+                                                                        },
+                                                                        "description": {
+                                                                            "type": "string",
+                                                                            "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/addressDetails::object/region::object/description::string"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "locality": {
+                                                                    "type": "object",
+                                                                    "required": [
+                                                                        "localityType"
+                                                                    ],
+                                                                    "properties": {
+                                                                        "localityType": {
+                                                                            "title": "Specify town/locality",
+                                                                            "type": "string",
+                                                                            "enum": [
+                                                                                "from standarized list",
+                                                                                "by manual input"
+                                                                            ]
+                                                                        }
+                                                                    },
+                                                                    "dependencies": {
+                                                                        "localityType": {
+                                                                            "oneOf": [
+                                                                                {
+                                                                                    "required": [
+                                                                                        "localityType"
+                                                                                    ],
+                                                                                    "properties": {
+                                                                                        "localityType": {
+                                                                                            "enum": [
+                                                                                                "from standarized list"
+                                                                                            ]
+                                                                                        },
+                                                                                        "directory": {
+                                                                                            "type": "object",
+                                                                                            "properties": {
+                                                                                                "locality": {
+                                                                                                    "title": "Town/Locality",
+                                                                                                    "type": "object",
+                                                                                                    "source": "/locality?lang=en&country=$country$&region=$region$",
+                                                                                                    "dependentFields": {
+                                                                                                        "country": "section2.lots[lotIndex].performance.placeOfPerformance.address.location.country.id",
+                                                                                                        "region": "section2.lots[lotIndex].performance.placeOfPerformance.address.location.region.id"
+                                                                                                    },
+                                                                                                    "required": [
+                                                                                                        "scheme",
+                                                                                                        "id",
+                                                                                                        "description"
+                                                                                                    ],
+                                                                                                    "properties": {
+                                                                                                        "scheme": {
+                                                                                                            "type": "string",
+                                                                                                            "const": "CUATM",
+                                                                                                            "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/addressDetails::object/locality::object/scheme::string"
+                                                                                                        },
+                                                                                                        "id": {
+                                                                                                            "type": "string",
+                                                                                                            "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/addressDetails::object/locality::object/id::string"
+                                                                                                        },
+                                                                                                        "description": {
+                                                                                                            "type": "string",
+                                                                                                            "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/addressDetails::object/locality::object/description::string"
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                {
+                                                                                    "required": [
+                                                                                        "localityType"
+                                                                                    ],
+                                                                                    "properties": {
+                                                                                        "localityType": {
+                                                                                            "enum": [
+                                                                                                "by manual input"
+                                                                                            ]
+                                                                                        },
+                                                                                        "manual": {
+                                                                                            "type": "object",
+                                                                                            "properties": {
+                                                                                                "locality": {
+                                                                                                    "title": "Town/Locality",
+                                                                                                    "type": "object",
+                                                                                                    "required": [
+                                                                                                        "scheme",
+                                                                                                        "id",
+                                                                                                        "description"
+                                                                                                    ],
+                                                                                                    "properties": {
+                                                                                                        "scheme": {
+                                                                                                            "type": "string",
+                                                                                                            "const": "other",
+                                                                                                            "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/addressDetails::object/locality::object/scheme::string"
+                                                                                                        },
+                                                                                                        "id": {
+                                                                                                            "type": "string",
+                                                                                                            "const": "999999999",
+                                                                                                            "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/addressDetails::object/locality::object/id::string"
+                                                                                                        },
+                                                                                                        "description": {
+                                                                                                            "type": "string",
+                                                                                                            "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/addressDetails::object/locality::object/description::string"
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "postalAddress": {
+                                                            "title": "Postal Address",
+                                                            "type": "object",
+                                                            "required": [
+                                                                "streetAddress"
+                                                            ],
+                                                            "properties": {
+                                                                "streetAddress": {
+                                                                    "title": "Street Address",
+                                                                    "type": "string",
+                                                                    "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/streetAddress::string"
+                                                                },
+                                                                "postalCode": {
+                                                                    "title": "Postal Code",
+                                                                    "type": "string",
+                                                                    "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/address::object/postalCode::string"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "description": {
+                                                    "title": "Description",
+                                                    "description": "Further description of the place of performance of the contract",
+                                                    "type": "string",
+                                                    "ocds": "tender::object/lots::array[object]/placeOfPerformance::object/description::string"
+                                                }
+                                            }
+                                        },
+                                        "deliveryPeriod": {
+                                            "title": "Contract period",
+                                            "description": "Duration of the contract, FA, DPS",
+                                            "type": "object",
+                                            "required": [
+                                                "startDate",
+                                                "endDate"
+                                            ],
+                                            "properties": {
+                                                "startDate": {
+                                                    "title": "Start",
+                                                    "type": "string",
+                                                    "ocds": "tender::object/lots::array[object]/contractPeriod::object/startDate::string"
+                                                },
+                                                "endDate": {
+                                                    "title": "End",
+                                                    "type": "string",
+                                                    "ocds": "tender::object/lots::array[object]/contractPeriod::object/endDate::string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "items": {
+                                    "title": "Nomenclature of lot",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "required": [
+                                            "itemId",
+                                            "relatedLot",
+                                            "description"
+                                        ],
+                                        "properties": {
+                                            "itemId": {
+                                                "type": "string",
+                                                "ocds": "tender::object/items::array[object]/id::string"
+                                            },
+                                            "relatedLot": {
+                                                "type": "string",
+                                                "ocds": "tender::object/items::array[object]/relatedLot::string"
+                                            },
+                                            "internalId": {
+                                                "title": "Internal item identifier",
+                                                "type": "string",
+                                                "ocds": "tender::object/items::array[object]/internalId::string"
+                                            },
+                                            "description": {
+                                                "title": "Item description",
+                                                "type": "string",
+                                                "ocds": "tender::object/items::array[object]/description::string"
+                                            },
+                                            "quantity": {
+                                                "title": "Volume of supply",
+                                                "type": "object",
+                                                "required": [
+                                                    "quantity"
+                                                ],
+                                                "properties": {
+                                                    "quantity": {
+                                                        "title": "Quantity",
+                                                        "type": "number",
+                                                        "ocds": "tender::object/items::array[object]/quantity::number"
+                                                    },
+                                                    "unitDetails": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "unitClass": {
+                                                                "title": "Class of measure",
+                                                                "type": "object",
+                                                                "source": "/unit-class?lang=en",
+                                                                "required": [
+                                                                    "id",
+                                                                    "description"
+                                                                ],
+                                                                "properties": {
+                                                                    "id": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "description": {
+                                                                        "type": "string"
+                                                                    }
+                                                                }
+                                                            },
+                                                            "unit": {
+                                                                "title": "Measurement unit name",
+                                                                "type": "object",
+                                                                "source": "/unit?lang=en&unitClass=$unitClass$",
+                                                                "dependentFields": {
+                                                                    "unitClass": "section2.lots[lotIndex].items[itemIndex].quantity.unitDetails.unitClass.id"
+                                                                },
+                                                                "required": [
+                                                                    "id",
+                                                                    "description"
+                                                                ],
+                                                                "properties": {
+                                                                    "id": {
+                                                                        "type": "string",
+                                                                        "ocds": "tender::object/items::array[object]/unit::object/id::string"
+                                                                    },
+                                                                    "description": {
+                                                                        "type": "string",
+                                                                        "ocds": "tender::object/items::array[object]/unit::object/name::string"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "classification": {
+                                                "title": "Classification",
+                                                "type": "object",
+                                                "source": "/cpv?lang=en&code=45100000-8",
+                                                "required": [
+                                                    "scheme",
+                                                    "id",
+                                                    "description",
+                                                    "title"
+                                                ],
+                                                "properties": {
+                                                    "scheme": {
+                                                        "title": "Classifier",
+                                                        "type": "string",
+                                                        "default": "CPV",
+                                                        "ocds": "tender::object/items::array[object]/classification::object/scheme::string"
+                                                    },
+                                                    "id": {
+                                                        "title": "CPV code",
+                                                        "type": "string",
+                                                        "ocds": "tender::object/items::array[object]/classification::object/id::string"
+                                                    },
+                                                    "description": {
+                                                        "title": "CPV description",
+                                                        "type": "string",
+                                                        "ocds": "tender::object/items::array[object]/classification::object/description::string"
+                                                    },
+                                                    "title": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            },
+                                            "additionalClassifications": {
+                                                "title": "Supplementary classification",
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "source": "/cpvs?lang=en",
+                                                    "required": [
+                                                        "scheme",
+                                                        "id",
+                                                        "description",
+                                                        "title"
+                                                    ],
+                                                    "properties": {
+                                                        "scheme": {
+                                                            "title": "Classifier",
+                                                            "type": "string",
+                                                            "default": "CPVS",
+                                                            "ocds": "tender::object/items::array[object]/additionalClassifications::array[object]/scheme::string"
+                                                        },
+                                                        "id": {
+                                                            "title": "CPVs code",
+                                                            "type": "string",
+                                                            "ocds": "tender::object/items::array[object]/additionalClassifications::array[object]/id::string"
+                                                        },
+                                                        "description": {
+                                                            "title": "CPVs name",
+                                                            "type": "string",
+                                                            "ocds": "tender::object/items::array[object]/additionalClassifications::array[object]/description::string"
+                                                        },
+                                                        "title": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "documents": {
+                                    "title": "Documents related to this lot",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "required": [
+                                            "documentId",
+                                            "documentType"
+                                        ],
+                                        "properties": {
+                                            "file": {
+                                                "title": "Select file",
+                                                "type": "string"
+                                            },
+                                            "documentId": {
+                                                "type": "string",
+                                                "ocds": "tender::object/documents::array[object]/id::string"
+                                            },
+                                            "title": {
+                                                "title": "Document title",
+                                                "type": "string",
+                                                "ocds": "tender::object/documents::array[object]/title::string"
+                                            },
+                                            "description": {
+                                                "title": "Brief description for the document",
+                                                "type": "string",
+                                                "ocds": "tender::object/documents::array[object]/description::string"
+                                            },
+                                            "documentType": {
+                                                "title": "Document type",
+                                                "type": "string",
+                                                "enum": [
+                                                    "tenderNotice",
+                                                    "procurementPlan",
+                                                    "biddingDocuments",
+                                                    "technicalSpecifications",
+                                                    "evaluationCriteria",
+                                                    "contractDraft",
+                                                    "eligibilityCriteria",
+                                                    "clarifications",
+                                                    "riskProvisions",
+                                                    "complaints",
+                                                    "billOfQuantity",
+                                                    "conflictOfInterest",
+                                                    "illustration",
+                                                    "cancellationDetails",
+                                                    "shortlistedFirms",
+                                                    "evaluationReports",
+                                                    "contractArrangements",
+                                                    "contractGuarantees"
+                                                ],
+                                                "enumNames": [
+                                                    "Contract Notice",
+                                                    "Procurement Plan",
+                                                    "Tender Documents",
+                                                    "Technical Specifications",
+                                                    "Evaluation Criteria",
+                                                    "Draft contract - special conditions",
+                                                    "Eligibility Criteria",
+                                                    "Clarification of Tender Documents",
+                                                    "Provisions for management of risks and liabilities",
+                                                    "Complaints and review decisions",
+                                                    "Bill Of Quantity",
+                                                    "Identified conflicts of interest uncovered",
+                                                    "Illustration",
+                                                    "Details of cancellation",
+                                                    "Shortlisted Firms",
+                                                    "Evaluation report",
+                                                    "Arrangements for closing or termination of the contract",
+                                                    "Contract Performance Guarantees"
+                                                ],
+                                                "ocds": "tender::object/documents::array[object]/documentType::string"
+                                            },
+                                            "relatedLots": {
+                                                "type": "array",
+                                                "minItems": 1,
+                                                "maxItems": 1,
+                                                "items": {
+                                                    "type": "string",
+                                                    "ocds": "tender::object/documents::array[object]/relatedLots::array[string]"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
-                  }
                 }
-              }
+            },
+            "section4": {
+                "title": "Procurement procedure description",
+                "type": "object",
+                "properties": {
+                    "method": {
+                        "type": "object",
+                        "required": [
+                            "legalBasis"
+                        ],
+                        "properties": {
+                            "procurementMethodDetails": {
+                                "title": "Procuremement method",
+                                "description": "Procedure type",
+                                "type": "string",
+                                "source": "/pmd?lang=en&country=MD",
+                                "readOnly": true,
+                                "ocds": "tender::object/procurementMethodDetails::string"
+                            },
+                            "legalBasis": {
+                                "title": "Legal base coveres",
+                                "description": "Information about legal framework",
+                                "type": "string",
+                                "enum": [
+                                    "DIRECTIVE_2014_23_EU",
+                                    "DIRECTIVE_2014_24_EU",
+                                    "DIRECTIVE_2014_25_EU",
+                                    "DIRECTIVE_2009_81_EC",
+                                    "REGULATION_966_2012",
+                                    "NATIONAL_PROCUREMENT_LAW"
+                                ],
+                                "ocds": "tender::object/legalBasis::string"
+                            }
+                        }
+                    },
+                    "administrative": {
+                        "title": "Administrative information",
+                        "description": "Administrative details",
+                        "type": "object",
+                        "properties": {
+                            "validityPeriod": {
+                                "type": "object",
+                                "required": [
+                                    "startDate"
+                                ],
+                                "properties": {
+                                    "startDate": {
+                                        "title": "Scheduled date for start of procedure",
+                                        "type": "string",
+                                        "ocds": "tender::object/tenderPeriod::object/startDate::string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "budget": {
+                "title": "Budget allocation",
+                "type": "object",
+                "properties": {
+                    "budgetBreakdown": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "id"
+                            ],
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "ocds": "planning::object/budget::object/budgetBreakdown::array[object]/id::string"
+                                },
+                                "budgetBreakdownAmount": {
+                                    "type": "object",
+                                    "required": [
+                                        "amount",
+                                        "currency"
+                                    ],
+                                    "properties": {
+                                        "amount": {
+                                            "type": "number",
+                                            "min": 0.01,
+                                            "ocds": "planning::object/budget::object/budgetBreakdown::array[object]/amount::object/amount::number"
+                                        },
+                                        "currency": {
+                                            "type": "string",
+                                            "default": "MDL",
+                                            "ocds": "planning::object/budget::object/budgetBreakdown::array[object]/amount::object/currency::string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
-          },
-          "section4": {
-            "method": {
-              "procurementMethodDetails": "OT"
-            }
-          }
         }
-      }
     }
-  }
+}

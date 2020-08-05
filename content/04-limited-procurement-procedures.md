@@ -1,161 +1,145 @@
 # Limited procurement procedures
-
-## Direct Award
-CA is able to maintain the registration of information regarding single source procedures carried out of the eProcurement system and the execution of the process inside the system as well. Having entered the information regarding the procedure, CA enters information on the winner and the agreement. 
-The procurement process is carried out in the following sequence:
-
-<img src="https://raw.githubusercontent.com/UNCITRAL-OpenDigitalProcurement/docs/master/images/1.png" width="80%" height="80%" />
-
-## Publication of a decision on intent to conclude an agreement
-CA publishes the concluded agreement and enters information regarding the EO immediately. This information is published as a report on the concluded agreement. It is not possible to submit a complaint at this point.
-
-## Entering information on EO on the basis of the concluded agreement
-CA enters information on EO on the basis of the concluded agreement. Editing is possible only until the report activation made by CA. Additionally CA notes compliance with qualification criteria for a certain EO on the agreement. Once the EO is determined, no further actions are performed by the CA.
-
-## Concluding an agreement
-Once the EO information is entered, CA can publish the concluded agreement. Conclusion of agreement, report on the introduced changes into the agreement, and execution of agreement are executed in the following way:
-  * Changes of the agreement’s status to active or terminated, should be certified with EDS as a matter of course.
-  * Entering information on the agreement is optional. Upon affixation of EDS, CA can finish the procedure (complete).
- 
-## Procedure completion
-Once the agreement was uploaded and EDS added, the procedure automatically changes to ‘complete’ status.
-
-## Transport model
-CN described as Record Package consists of four (at least) or more Release Packages: 
-* ‘cnParent’ (hi-level common data of Contract Notice and a budget of procurement)
-* ‘cnDetails’ with all other CN data (depends on the starting point (stage): PN, PIN or CfC (PS/PQ/EV)
-* ‘eiDetails’ (hi-level common data of used EI)
-* At least one ‘fs’ (detailed information about used FS)
-<details closed>
-<summary>See details.</summary>
-
-```json
-{
-  "uri": "",
-  "version": "",
-  "extensions": [],
-  "publisher": {},
-  "license": "",
-  "publicationPolicy": "",
-  "publishedDate": "",
-  "packages": [
-    "uri of EI release package",
-    "uri(s) of FS(s) release package(s)",
-    "uri of CN hi-level release package",
-    "uri of CN details release package"
-  ],
-  "records": [
-    {
-      "description": "This Compiled release includes CN's hi-level",
-      "properties": {
-        "ocid": "",
-        "compiledRelease": {"$ref": "#/models/cnParent"}
-      }
-    },
-    {
-      "description": "This compiled release includes CN's details",
-      "properties": {
-        "ocid": "",
-        "compiledRelease": {"$ref": "#/models/cnDetails"}
-      }
-    },
-    {
-      "description": "This compiled release includes FS details",
-      "properties": {
-        "ocid": "",
-        "compiledRelease": {"$ref": "#/models/fs"}
-      }
-    },
-    {
-      "description": "This Compiled release includes EI's hi-level",
-      "properties": {
-        "ocid": "",
-        "compiledRelease": {"$ref": "#/models/ei"}
-      }
-    }
-  ]
-}
-
-```
-</details>  
-
-## Query models
-
-### contractNoticeParent (cnParent) Query Model
-
-|   **Schema**	|  	|
-|-----|-----|
-|  **ocid** </br> _A globally unique identifier for this part of Contracting Process_ |  string 	|
-|  **id** </br> _An identifier for this particular release of information for part of CP_ |  string 	|
-|  **date** </br> _The date this information is released_	|  date-time 	|
-|  **tag** </br> _A value from the releaseTag codelist that identifies the nature of the release being made_|  array 	|
-|  **initiationType** </br> _String specifying the type of initiation process used for this contract, taken from the initiationType codelist_ |  string 	|
-|  **planning.rationale** </br> _The rationale for the procurement provided in free text._ |  string 	|
-|  **planning.budget.description** </br> _A short free text description of the budget source_ |  string 	|
-|  **planning.budget.amount ([Value](google.com))** </br> _Object described the sum of funds specified by CA this CP_ |  object 	|
-|  **planning.budget.isEuropeanUnionFunded** </br> _True/False field to indicate whether this procurement is related to a project and/or programme financed by EU_ |  boolean 	|
-|  **planning.budget.budgetBreakdown ([BudgetBreakdown](google.com))** </br> _Detailed budget breakdown to be expressed, covering multiple budget sources and multiple periods_ |  object 	|
-|  **tender.id** </br> _An identifier for this CP_ |  string 	|
-|  **tender.title** </br> _Title for this CP_ |  string 	|
-|  **tender.description** </br> _Description for this CP_ |  string 	|
-|  **tender.classification ([Classification](google.com))** </br> _The primary classification for the tender. Uses CPV Codelist_ |  object 	|
+## Table of contents
+  1. [Introduction](#introduction)
+  2. [Quickstart]()
+  3. [Command model]()
+  4. [Query model]()
 
 
-### ‘cnParent’ as Compiled Release
-<details closed>
-<summary>See details.</summary>
 
-```json
-{
-  "ocid": "",
-  "id": "",
-  "date": "",
-  "tag": "compiled",
-  "initiationType": "tender",
-  "planning": {"$ref": "#/definitions/Planning"},
-  "tender": {
-    "id": "",
-    "title": "",
-    "description": "",
-    "classification": {"$ref": "#/definitions/Classification"},
-    "status": "",
-    "statusDetails": "",
-    "value": {"$ref": "#/definitions/Value"},
-    "procurementMethod": "",
-    "procurementMethodDetails": "",
-    "procurementMethodRationale": "",
-    "procurementMethodAdditionalInfo": "",
-    "mainProcurementCategory": "",
-    "procuringEntity": {
-        "id":"",
-        "name": ""},
-    "additionalProcurementCategories": [],
-    "hasEnquiries": "",
-    "eligibilityCriteria": "",
-    "contractPeriod": {"$ref": "#/definitions/Period"},
-    "acceleratedProcedure": {"$ref": "#/definitions/AcceleratedProcedure"},
-    "designContest": {"$ref": "#/definitions/DesignContest"},
-    "electronicWorkflows": {"$ref": "#/definitions/ElectronicWorkflows"},
-    "jointProcurement": {"$ref": "#/definitions/JointProcurement"},
-    "procedureOutsourcing": {"$ref": "#/definitions/ProcedureOutsorcing"},
-    "framework": {"$ref": "#/definitions/Framework"},
-    "dynamicPurchasingSystem": {"$ref": "#/definitions/DynamicPurchasingSystem"},
-    "legalBasis": ""
-  },
-  "parties": [ {"$ref": "#/definitions/Organization"} ],
-  "relatedProcesses": [
-    { "$ref": "#/definitions/RelatedProcess" }
-  ]
-}
-
-```
-</details>  
+rthrthtrhrth
 
 
-[](/tables/cn_details_query_model_t.csv)
+
+rthrthrthrthrth
+rthrh
+rth
+rh
+r
+th
+rth
+r
+h
+rh
+r
+
+
+
+rth
+
+rth
+
+rh
+rht
+rth
+
+rth
+rth
+
+
+
+
+fsefsef
+
+
+sef
+
+
+sf
+
+
+sf
+
+
+sf
+
+
+
+sf
+
+
+
+sf
+
+
+
+sf
+
+
+
+sf
+
+
+
+sf
+
+
+
+sf
+
+
+
+
+rth
+
+
+
+
+
+
+rh
+
+rth
+
+rh
+rth
+rh
+rh
+
+rh
+rh
+
+
+
+rh
+
+r
+rh
+
+
+
+
+rh
+
+
+
+
+rh
+
+
+
+
+
+rh
+
+
+
+
+
+
+
+rh
+
+
+
+
+
+rh
+
+
+
+## <a name="introduction"></a> Introduction
+## Quickstart
 ## Command model
-
-
-
-
+## Query model
 

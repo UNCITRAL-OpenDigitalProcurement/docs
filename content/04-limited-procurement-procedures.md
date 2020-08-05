@@ -90,6 +90,10 @@ CN described as Record Package consists of four (at least) or more Release Packa
 |  **date**</br>_The date this information is released_	|  date-time 	|
 |  **tag**</br>	_A value from the releaseTag codelist that identifies the nature of the release being made_|  string 	|
 |  **initiationType**</br>_String specifying the type of initiation process used for this contract, taken from the initiationType codelist_ |  string 	|
+|  **planning.rationale**</br>_The rationale for the procurement provided in free text._ |  string 	|
+|  **planning.budget.description**</br>_A short free text description of the budget source_ |  string 	|
+|  **planning.budget.amount**</br>_Object described the sum of funds specified by CA this CP_ </br> See [Value](google.com)|  object 	|
+|  **planning.budget.isEuropeanUnionFunded**</br>_True/False field to indicate whether this procurement is related to a project and/or programme financed by EU_|  boolean 	|
 
 ### ‘cnParent’ as Compiled Release
 <details closed>

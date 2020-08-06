@@ -183,10 +183,21 @@
             "description": "Objects described information about related funding (FSs), EI and other related sub-processes",
             "type": "object",
             "properties": {
-                "See OrganizationReference": {
-                    "description": "LINK TO OrganizationReference"
+                "See RelatedProcess": {
+                    "description": "LINK TO RelatedProcess"
+                }
+            }
+        },
+        "parties": { 
+            "description": "Object described information about Entities involved into this CP",
+            "type": "object",
+            "properties": {
+                "See Organization": {
+                    "description": "LINK TO Organization"
                 }
             }
         }
     }
 }
+
+//TODO 

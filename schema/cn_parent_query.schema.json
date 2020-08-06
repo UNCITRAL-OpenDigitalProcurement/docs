@@ -4,6 +4,18 @@
         "ocid": {
             "description": "A globally unique identifier for this Contracting Process",
             "type":"string"
+        },
+        "id": {
+            "description": "An identifier for this particular release of information for CP",
+            "type":"string"
+        },
+        "date": {
+            "description": "The date this information is released",
+            "type": "string"
+        },
+        "tag": {
+            "description": "A value from the releaseTag codelist that identifies the nature of the release being made",
+            "type": "string"
         }
     }
 }

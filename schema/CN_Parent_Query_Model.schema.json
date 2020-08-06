@@ -30,8 +30,13 @@
             "type": "string"
         },
         "planning.budget.amount": {
-            "description": "Object described the sum of funds specified by CA this CP. **See Value**",
-            "type": "object"
+            "description": "Object described the sum of funds specified by CA this CP.",
+            "type": "object",
+            "properties": {
+                "See Value": {
+                    "description": "LINK TO VALUE"
+                }
+            }
         }
     }
 }

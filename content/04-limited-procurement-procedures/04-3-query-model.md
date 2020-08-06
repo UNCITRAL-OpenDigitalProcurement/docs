@@ -1,3 +1,3 @@
 ## Query model
 ---
-[](/schema/limited_pn_create.schema)
+[](/schema/cn_parent_query.schema.json)

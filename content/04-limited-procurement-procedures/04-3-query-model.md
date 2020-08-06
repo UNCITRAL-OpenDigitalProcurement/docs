@@ -1,3 +1,3 @@
 ## Query model
 ---
-[](/schema/cn_parent_query.schema.json)
+[](/schema/CN Parent Query Model.schema.json)

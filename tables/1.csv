@@ -1,3 +1,4 @@
+Schema,
 ocid,string
 A globally unique identifier for this Contracting Process,
 id,string
@@ -7,7 +8,7 @@ The date this information is released,
 tag,string
 A value from the releaseTag codelist that identifies the nature of the release being made,
 initiationType,string
-String specifying the type of initiation process used for this contract, taken from the initiationType codelist,
+String specifying the type of initiation process used for this contract, taken from the initiationType codelist",
 planning.rationale,string
 The rationale for the procurement provided in free text.,
 planning.budget.description,string

@@ -82,4 +82,6 @@
 |  **relatedProcesses** | array | object |
 |  Objects described information about related funding (FSs), EI and other related sub-processes<br/>See RelatedProcess |  |  |
 |  **parties** | array | object |
-|  Object described information about Entities involved into this CP <br/>See Organization |  |  | ]($ "select")
+|  Object described information about Entities involved into this CP <br/>See Organization |  |  | 
+
+]($ "select")

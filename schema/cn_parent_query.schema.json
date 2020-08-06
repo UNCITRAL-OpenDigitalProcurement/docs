@@ -1,5 +1,5 @@
 {
-    "title": "CN Parent Query Model",
+    "type":"object",
     "properties": {
         "ocid": {
             "description": "A globally unique identifier for this Contracting Process",

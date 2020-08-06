@@ -37,6 +37,19 @@
                     "description": "LINK TO VALUE"
                 }
             }
+        },
+        "planning.budget.isEuropeanUnionFunded": {
+            "description": "True/False field to indicate whether this procurement is related to a project and/or programme financed by EU",
+            "type": "boolean"
+        },
+        "planning.budget.budget Breakdown": {
+            "description": "Detailed budget breakdown to be expressed, covering multiple budget sources and multiple periods",
+            "type": "object",
+            "properties": {
+                "See BudgetBreakdown": {
+                    "description": "LINK TO BudgetBreakdown"
+                }
+            }
         }
     }
 }

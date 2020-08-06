@@ -70,12 +70,66 @@
         },
         "tender.status": {
             "description": "The current status of the CP based on the tenderStatus codelist",
-            "type": "string",
+            "type": "string"
+        },
+        "tender.statusDetails": {
+            "description": "The current status of the CP based on the tenderStatusDetails codelist",
+            "type": "string"
+        },
+        "tender.value": {
+            "description": "The total upper estimated value of this CP",
+            "type": "object",
             "properties": {
-                "See tenderStatus codelist": {
-                    "description": "LINK TO tenderStatus codelist"
+                "See Value": {
+                    "description": "LINK TO VALUE"
                 }
             }
-        }
+        },
+        "tender.procurementMethod": {
+            "description": "Specify tendering method against the procurementMethods codelist",
+            "type": "string"
+        },
+        "tender.procurementMethodDetails": {
+            "description": "Additional detail on the procurement method used.",
+            "type": "string"
+        },
+        "tender.procurementMethodRationale": {
+            "description": "Rationale of procurement method",
+            "type": "string"
+        },
+        "tender.procurementMethodAdditionalInfo": {
+            "description": "Additional information about the procurement method",
+            "type": "string"
+        },
+        "tender.mainProcurementCategory": {
+            "description": "The primary category describing the object of this contracting process from the procurementCategory codelist",
+            "type": "string"
+        },
+        "tender.additionalProcurementCategories": {
+            "description": "Additional categories which describe the subject of this CP, from the extendedProcurementCategory codelist",
+            "type": "string"
+        },
+        "tender.hasEnquiries": {
+            "description": "A true/false field to indicate whether any enquiries were received during the tender process",
+            "type": "boolean"
+        },
+        "tender.eligibilityCriteria": {
+            "description": "A description of any eligibility criteria for potential suppliers.",
+            "type": "string"
+        },
+
+        "tender.submissionLanguages": {
+            "description": "Language(s) in which tenderers may submit, drawn from the submissionLanguages codelist",
+            "type": "array"
+        },
+        "tender.contractPeriod": {
+            "description": "The period over which the contract is estimated or required to be active",
+            "type": "object",
+            "properties": {
+                "See Period": {
+                    "description": "LINK TO Period"
+                }
+            }
+        },
     }
 }

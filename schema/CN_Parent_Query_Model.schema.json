@@ -119,7 +119,7 @@
         },
         "tender.submissionLanguages": {
             "description": "Language(s) in which tenderers may submit, drawn from the submissionLanguages codelist",
-            "type": "array"
+            "type": "object"
         },
         "tender.contractPeriod": {
             "description": "The period over which the contract is estimated or required to be active",

@@ -93,7 +93,7 @@
 
 [
 |  Attribute/description |  | Data-Type |
-|   |  |  |
+|  --- | --- | --- |
 |  **ocid** |  | string |
 |  A globally unique identifier for this part of Contracting Process |  |  |
 |  **id** |  | string |

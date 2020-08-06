@@ -1,3 +1,4 @@
+Schema, data-type
 ocid,string
 A globally unique identifier for this Contracting Process,
 id,string

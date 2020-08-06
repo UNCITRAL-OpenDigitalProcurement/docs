@@ -131,5 +131,9 @@
                 }
             }
         },
+        "tender.acceleratedProcedure.isAcceleratedProcedure": {
+            "description": "A True/False field to indicate whether an accelerated procedure has been used for this procurement",
+            "type": "boolean"
+        }
     }
 }

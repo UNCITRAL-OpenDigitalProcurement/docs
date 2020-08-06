@@ -14,8 +14,7 @@ The rationale for the procurement provided in free text.,
 planning.budget.description,string
 A short free text description of the budget source,
 planning.budget.amount,object
-Object described the sum of funds specified by CA this CP 
-See Value,
+Object described the sum of funds specified by CA this CP . See Value,
 planning.budget.isEuropeanUnionFunded,boolean
 True/False field to indicate whether this procurement is related to a project and/or programme financed by EU,
 planning.budget.budget Breakdown,object

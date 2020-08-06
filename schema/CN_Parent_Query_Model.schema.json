@@ -121,7 +121,7 @@
             "description": "Language(s) in which tenderers may submit, drawn from the submissionLanguages codelist",
             "type": "object"
         },
-        "tender.contractPeriod": {
+        "tender.contractPeriod": { 
             "description": "The period over which the contract is estimated or required to be active",
             "type": "object",
             "properties": {
@@ -137,6 +137,56 @@
         "tender.designContest.serviceContractAward": {
             "description": "A True/False field to indicate whether a service contract will be awarded to the winner(s) of the design contest.",
             "type": "boolean"
+        },
+        "tender.electronicWorkflows.useOrdering": {
+            "description": "A True/False field to indicate if electronic ordering will be used.",
+            "type": "boolean"
+        },
+        "tender.electronicWorkflows.usePayment": {
+            "description": "A True/False field to indicate if electronic payment will be used.",
+            "type": "boolean"
+        },
+        "tender.electronicWorkflows.acceptInvoicing": {
+            "description": "A True/False field to indicate if electronic invoicing will be accepted.",
+            "type": "boolean"
+        },
+        "tender.jointProcurement.isJointProcurement": {
+            "description": "A True/False field to indicate if this is a joint procurement or not.",
+            "type": "boolean"
+        },
+        "tender.procedureOutsourcing.procedureOutsourced": {
+            "description": "A True/False field to indicate whether the procurement procedure has been outsourced",
+            "type": "boolean"
+        },
+        "tender.framework.isAFramework": {
+            "description": "A True/False field to indicate whether a framework agreement has been established as part of this procurement",
+            "type": "boolean"
+        },
+        "tender.hasDynamicPurchasingSystem": {
+            "description": "A True/False field to indicate whether a Dynamic Purchasing System has been set up.",
+            "type": "boolean"
+        },
+        "tender.legalBasis": {
+            "description": "The legal basis of the tender based on the legalBasis codelis",
+            "type": "string"
+        },
+        "tender.procuringEntity": { 
+            "description": "The period over which the contract is estimated or required to be active",
+            "type": "object",
+            "properties": {
+                "See OrganizationReference": {
+                    "description": "LINK TO OrganizationReference"
+                }
+            }
+        },
+        "relatedProcesses": { 
+            "description": "Objects described information about related funding (FSs), EI and other related sub-processes",
+            "type": "array",
+            "properties": {
+                "See OrganizationReference": {
+                    "description": "LINK TO OrganizationReference"
+                }
+            }
         }
     }
 }

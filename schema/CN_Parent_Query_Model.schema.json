@@ -134,6 +134,10 @@
         "tender.acceleratedProcedure.isAcceleratedProcedure": {
             "description": "A True/False field to indicate whether an accelerated procedure has been used for this procurement",
             "type": "boolean"
+        },
+        "tender.designContest.serviceContractAward": {
+            "description": "A True/False field to indicate whether a service contract will be awarded to the winner(s) of the design contest.",
+            "type": "boolean"
         }
     }
 }

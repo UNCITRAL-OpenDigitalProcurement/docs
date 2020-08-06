@@ -1,4 +1,6 @@
-## Query model
+## Query models
+
+### contractNoticeParent (cnParent)
 ---
 
 |  Attribute/description |  | Data-Type |
@@ -83,3 +85,99 @@
 |  Objects described information about related funding (FSs), EI and other related sub-processes<br/>See RelatedProcess |  |  |
 |  **parties** | array | object |
 |  Object described information about Entities involved into this CP <br/>See Organization |  |  |
+
+
+### contractNoticeDetails (cnDetails)
+----
+
+|  Attribute/description |  | Data-Type |
+| --- | --- | --- |
+|  **ocid** |  | string |
+|  A globally unique identifier for this part of Contracting Process |  |  |
+|  **id** |  | string |
+|  An identifier for this particular release of information for part of CP |  |  |
+|  **date** |  | date-time |
+|  The date this information is released |  |  |
+|  **tag** |  | string |
+|  A value from the releaseTag codelist that identifies the nature of the release being made |  |  |
+|  **initiationType** |  | string |
+|  String specifying the type of initiation process used for this part of CP, taken from the initiationType codelist |  |  |
+|  **purposeOfNotice.isACallForCompetition** |  | boolean |
+|  A True/False field to indicate whether this notice is a call for competition |  |  |
+|  **tender.id** |  | string |
+|  An identifier for this part of CP |  |  |
+|  **tender.title** |  | string |
+|  Title for this part of CP |  |  |
+|  **tender.description** |  | string |
+|  Description for this part of CP |  |  |
+|  **tender.awardCriteria** |  | string |
+|  Specify the award criteria for the procurement, using the award criteria codelist |  |  |
+|  **tender.awardCriteriaDetails** |  | string |
+|  Specify the award criteria details for the procurement, using the award criteria details codelist |  |  |
+|  **tender.conversions** |  | array |
+|  Conversions to be applied for the criteria<br/>See Conversion |  |  |
+|  **tender.criteria** |  | array |
+|  Criteria required for the tenderers<br/>See Criterion |  |  |
+|  **tender.status** |  | string |
+|  The current status of this part of CP based on the tenderStatus codelist |  |  |
+|  **tender.statusDetails** |  | string |
+|  The current status of this part of CP based on the tenderStatusDetails codelist |  |  |
+|  **tender.enquiryPeriod** |  |  |
+|  The period during which potential bidders may submit questions and requests for clarification <br/>See Period |  |  |
+|  **tender.hasEnquiries** |  | boolean |
+|  A true/false field to indicate whether any enquiries were received during the tender process. |  |  |
+|  **tender.enquiries** | array | object |
+|  List of received enquiries and comment from PE<br/>See Enquiry |  |  |
+|  **tender.standStillPeriod** |  |  |
+|  See Period |  |  |
+|  **tender.lotGroups.optionToCombine** |  | boolean |
+|  True/False value indicates the CA reserves the right to combine the lots in this group when awarding a contract |  |  |
+|  **tender.lots** | array | object |
+|  A tender process is divided into lots. <br/>See Lot |  |  |
+|  **tender.items** | array | object |
+|  The goods and services to be purchased<br/>See Item |  |  |
+|  **tender.requiresElectronicCatalogue** |  | boolean |
+|  True/False value indicates whether bids must include an electronic catalogue. |  |  |
+|  **tender.submissionMethod** |  | string |
+|  Specify the method by which bids must be submitted using the submission method codelist |  |  |
+|  **tender.submissionMethodRationale** |  | string |
+|  A value from the submissionValueRationale codelist that identifies the rationale where electronic submission method is not to be allowed |  |  |
+|  **tender.submissionMethodDetails** |  | string |
+|  Any detailed or further information on the submission method. |  |  |
+|  **tender.tenderPeriod** |  | object |
+|  The period when this part of CP will be open for submission<br/>See Period |  |  |
+|  **tender.secondStage  object** |  |  |
+|  The number of participants in the second stage of GPA procedure<br/>See SecondStage |  |  |
+|  **tender.procurementMethodModalities** |  | string |
+|  The modalities of the procurement method indicated with Method Modalities codelist |  |  |
+|  **tender.otherCriteria  object** |  |  |
+|  The criteria <br/>See OtherCriteria |  |  |
+|  **tender.auctionPeriod** |  | object |
+|  General period of all auctions scheduled under specific contracting process<br/>See Period |  |  |
+|  **tender.electronicAuctions** | array | object |
+|  See ElectronicAuctions |  |  |
+|  **tender.documents** | array | object |
+|  All documents and attachments related to the tender, including any notices. See the documentType codelist<br/>See Document |  |  |
+|  **bids.details** | array | object |
+|  An array of bids, providing information on the bidders, bid status, bid values and related documents.<br/>See Bid |  |  |
+|  **bids.statistics** | array | object |
+|  Summary statistics on the number and nature of bids received. <br/>See BidStatistic |  |  |
+|  **awards** | array | object |
+|  A list of An award for the given procurement<br/>See Award |  |  |
+|  **tender.awardPeriod** |  | object |
+|  The period for adjudication and selection of the contract award<br/>See Period |  |  |
+|  **contracts** | array | object |
+|  Information regarding the signed contract between the buyer and supplier(s)<br/>See Contract |  |  |
+|  **relatedProcesses** | array | object |
+|  Objects described information about related funding (FSs), EI and other related sub-processes<br/>See RelatedProcess |  |  |
+|  **parties** | array | object |
+|  Object described information about Entities involved into this part of CP <br/>See Organization |  |  |
+|  **qualifications** | array | object |
+|  A list of an qualifications for the given procurement<br/>See Qualification |  |  |
+|  **submissions.details** | array | object |
+|  An array of submissions, providing information on the candidates, status and related documents.<br/>See Submission |  |  |
+|  **preQualification.period object** |  |  |
+|  The period when this part of CP will be open for submission<br/>See Period |  |  |
+
+
+### 

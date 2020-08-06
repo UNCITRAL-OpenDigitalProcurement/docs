@@ -50,6 +50,32 @@
                     "description": "LINK TO BudgetBreakdown"
                 }
             }
+        },
+        "tender.id": {
+            "description": "An identifier for this CP",
+            "type": "string"
+        },
+        "tender.title": {
+            "description": "Title for this CP",
+            "type": "string"
+        },
+        "tender.classification": {
+            "description": "The primary classification for the tender. Uses CPV Codelist ",
+            "type": "object",
+            "properties": {
+                "See Classification": {
+                    "description": "LINK TO Classification"
+                }
+            }
+        },
+        "tender.status": {
+            "description": "The current status of the CP based on the tenderStatus codelist",
+            "type": "string",
+            "properties": {
+                "See tenderStatus codelist": {
+                    "description": "LINK TO tenderStatus codelist"
+                }
+            }
         }
     }
 }

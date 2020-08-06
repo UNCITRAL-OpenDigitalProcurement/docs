@@ -1,7 +1,5 @@
-"ocid
-A globally unique identifier for this Contracting Process",string
-"id
-An identifier for this particular release of information for CP",string
+ocid / A globally unique identifier for this Contracting Process,string
+id / An identifier for this particular release of information for CP,string
 date,date-time
 The date this information is released,
 tag,string

@@ -16,6 +16,22 @@
         "tag": {
             "description": "A value from the releaseTag codelist that identifies the nature of the release being made",
             "type": "string"
+        },
+        "initiationType": {
+            "description": "String specifying the type of initiation process used for this contract, taken from the initiationType codelist",
+            "type": "string"
+        },
+        "planning.rationale": {
+            "description": "The rationale for the procurement provided in free text.",
+            "type": "string"
+        },
+        "planning.budget.description": {
+            "description": "A short free text description of the budget source",
+            "type": "string"
+        },
+        "planning.budget.amount": {
+            "description": "Object described the sum of funds specified by CA this CP. **See Value**",
+            "type": "object"
         }
     }
 }

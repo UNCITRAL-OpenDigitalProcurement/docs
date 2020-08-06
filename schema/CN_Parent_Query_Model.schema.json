@@ -181,7 +181,7 @@
         },
         "relatedProcesses": { 
             "description": "Objects described information about related funding (FSs), EI and other related sub-processes",
-            "type": "array",
+            "type": "object",
             "properties": {
                 "See OrganizationReference": {
                     "description": "LINK TO OrganizationReference"

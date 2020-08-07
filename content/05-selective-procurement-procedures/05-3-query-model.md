@@ -92,7 +92,6 @@
 
 
 [
-
 |  Attribute/description |  | Data-Type |
 | --- | --- | --- |
 |  **ocid** |  | string |
@@ -151,7 +150,6 @@
 |  Objects described information about related funding (FSs), EI and other related sub-processes<br/>See RelatedProcess |  |  |
 |  **parties** | array | object |
 |  Object described information about Entities involved into this part of CP <br/>See Organization |  |  |
-
 ]($ "dddd")
 
 ### 

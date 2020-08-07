@@ -1,3 +1,3 @@
-# Open procurement procedures
+# Selective procurement procedures
 ## Introduction
 ___

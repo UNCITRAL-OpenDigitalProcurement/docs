@@ -1,14 +1,13 @@
 ## Tutorial
 ___
-### Preconditions
+
+### Create PN
 
 Before creating a CP, follow these steps:
 
 * Create [EI]() and [FS]().
 * Get [X-OPERATION-ID]().
 * Register [documents]()
-
-### Create PN
 
 **Send request**
 
@@ -159,6 +158,7 @@ Use the JSON schema below and [command model]() to create the payload:
 ```
 
 ### Update PN
+---
 
 **Send request**
 
@@ -322,3 +322,16 @@ Use the JSON schema below and [command model]() to create the payload:
 
 ```
 
+## Create CNonPN
+---
+
+* POST /do/pn/cpid/ocid-pn HTTP/1.1
+* Authorization: Bearer QWxhZGRpbjpPcGVuU2VzYW1l
+* X-OPERATION-ID: Got in preconditions steps
+* Content-Type: application/json
+* Host: bpe.eprocurement.systems
+
+```json
+
+
+```

@@ -29,23 +29,23 @@
 |  **tender.requiresElectronicCatalogue** | True/False value indicates whether bids must include an electronic catalogue. | + | + | + |
 |  **tender.submissionMethod** | Specify the method by which bids must be submitted using the [submission method codelist]() | + | + | + |
 |  **tender.submissionMethodRationale** | A value from the [submissionValueRationale codelist]() that identifies the rationale where electronic submission method is not to be allowed | + | + | + |
-|  **tender.submissionMethodDetails** | Any detailed or further information on the submission method. | + | - |  |
-|  **tender.tenderPeriod** | The period when this part of CP will be open for submission. See [Period]() | + | - |  |
-|  **tender.secondStage** | The number of participants in the second stage of GPA procedure. See [Period]() | - | - |  |
-|  **tender.procurementMethodModalities** | The modalities of the procurement method indicated with [Method Modalities codelist]() | + | + |  |
-|  **tender.otherCriteria** | The criteria. See [OtherCriteria]() | - | - |  |
-|  **tender.auctionPeriod** | General period of all auctions scheduled under specific contracting process. See [Period]() | + | - |  |
-|  **tender.electronicAuctions** | See [electronicAuctions]() | + |  |  |
+|  **tender.submissionMethodDetails** | Any detailed or further information on the submission method. | + | + | + |
+|  **tender.tenderPeriod** | The period when this part of CP will be open for submission. See [Period]() | + | - | + |
+|  **tender.secondStage** | The number of participants in the second stage of GPA procedure. See [Period]() | - | - | + |
+|  **tender.procurementMethodModalities** | The modalities of the procurement method indicated with [Method Modalities codelist]() | + | + | + |
+|  **tender.otherCriteria** | The criteria. See [OtherCriteria]() | - | - | + |
+|  **tender.auctionPeriod** | General period of all auctions scheduled under specific contracting process. See [Period]() | + | - | + |
+|  **tender.electronicAuctions** | See [electronicAuctions]() | + | - | + |
 |  **tender.documents** | All documents and attachments related to the tender, including any notices. See the [documentType codelist]() | + | + | + |
 |  **tender.amendments** | An array of amendments for CP. See [Amendment]() | + | + | + |
 |  **bids.details** | An array of bids, providing information on the bidders, bid status, bid values and related documents. See [Bids]() | + | - | + |
 |  **bids.statistics** | Summary statistics on the number and nature of bids received. See [BidStatistic]() | + | - | + |
 |  **awards** | A list of An award for the given procurement. See [Award]() | + | + | + |
-|  **tender.awardPeriod** | The period for adjudication and selection of the contract award. See [Period]() | + | + |  |
-|  **contracts** | Information regarding the signed contract between the buyer and supplier(s). See [Contract]() | + | + |  |
-|  **relatedProcesses** | Objects described information about related funding (FSs), EI and other related sub-processes.See [RelatedProcess]() | + | + |  |
-|  **parties** | Object described information about Entities involved into this part of CP. See [Organization]() | + | + |  |
-|  **qualifications** | A list of an qualifications for the given procurement. See [Qualification]() | - | - |  |
-|  **submissions.details** | An array of submissions, providing information on the candidates, status and related documents. See [Submission]() | - | - |  |
-|  **preQualification.period** | The period when this part of CP will be open for submission. See [Period]() | - | - |  |
+|  **tender.awardPeriod** | The period for adjudication and selection of the contract award. See [Period]() | + | + | + |
+|  **contracts** | Information regarding the signed contract between the buyer and supplier(s). See [Contract]() | + | + | + |
+|  **relatedProcesses** | Objects described information about related funding (FSs), EI and other related sub-processes.See [RelatedProcess]() | + | + | + |
+|  **parties** | Object described information about Entities involved into this part of CP. See [Organization]() | + | + | + |
+|  **qualifications** | A list of an qualifications for the given procurement. See [Qualification]() | - | - | + |
+|  **submissions.details** | An array of submissions, providing information on the candidates, status and related documents. See [Submission]() | - | - | + |
+|  **preQualification.period** | The period when this part of CP will be open for submission. See [Period]() | - | - | + |
  

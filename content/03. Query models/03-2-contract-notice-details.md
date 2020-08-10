@@ -5,19 +5,19 @@
 | :--- | :--- | :---: | :---: | :---: |
 |   |  | **open** | **limited** | **selective** |
 |  **ocid** | A globally unique identifier for this part of Contracting Process |  + | + | + |
-|  **id** | An identifier for this particular release of information for part of CP |  |  |  |
-|  **date** | The date this information was created/updated |  |  |  |
-|  **tag** | A value from the [releaseTag codelist]() that identifies the nature of the release being made |  |  |  |
-|  **initiationType** | String specifying the type of initiation process used for this part of CP, taken from the [initiationType codelist]() |  |  |  |
-|  **purposeOfNotice.isACallForCompetition** | A True/False field to indicate whether this notice is a call for competition |  |  |  |
-|  **tender.id** | An identifier for this part of CP |  |  |  |
-|  **tender.title** | Title for this part of CP |  |  |  |
-|  **tender.description** | Description for this part of CP |  |  |  |
-|  **tender.awardCriteria** | Specify the award criteria for the procurement, using the [award criteria codelist]() |  |  |  |
+|  **id** | An identifier for this particular release of information for part of CP | + | + | + |
+|  **date** | The date this information was created/updated | + |  +| + |
+|  **tag** | A value from the [releaseTag codelist]() that identifies the nature of the release being made | + | + | + |
+|  **initiationType** | String specifying the type of initiation process used for this part of CP, taken from the [initiationType codelist]() | + | + | + |
+|  **purposeOfNotice.isACallForCompetition** | A True/False field to indicate whether this notice is a call for competition | + | + | + |
+|  **tender.id** | An identifier for this part of CP | + | + | + |
+|  **tender.title** | Title for this part of CP | + | + | + |
+|  **tender.description** | Description for this part of CP | + |  +|+  |
+|  **tender.awardCriteria** | Specify the award criteria for the procurement, using the [award criteria codelist]() | + |  |  |
 |  **tender.awardCriteriaDetails** | Specify the award criteria details for the procurement, using the [award criteria details codelist]() |  |  |  |
 |  **tender.conversions** | Conversions to be applied for the criteria. See [Conversion]() |  |  |  |
 |  **tender.criteria** | Criteria required for the tenderers. See [Criterion]() |  |  |  |
-|  **tender.status** | The current status of this part of CP based on the [tenderStatus codelist]() |  |  |  |
+|  **tender.status** | The current status of this part of CP based on the [tenderStatus codelist]() | + |  |  |
 |  **tender.statusDetails** | The current status of this part of CP based on the [tenderStatusDetails codelist]() |  |  |  |
 |  **tender.enquiryPeriod** | The period during which potential bidders may submit questions and requests for clarification. See [Period]() |  |  |  |
 |  **tender.hasEnquiries** | A true/false field to indicate whether any enquiries were received during the tender process. |  |  |  |

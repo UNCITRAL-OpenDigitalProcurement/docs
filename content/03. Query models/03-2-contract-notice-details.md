@@ -32,7 +32,7 @@
 |  **tender.submissionMethodDetails** | Any detailed or further information on the submission method. | + | - |  |
 |  **tender.tenderPeriod** | The period when this part of CP will be open for submission. See [Period]() | + | - |  |
 |  **tender.secondStage** | The number of participants in the second stage of GPA procedure. See [Period]() | - | - |  |
-|  **tender.procurementMethodModalities** | The modalities of the procurement method indicated with [Method Modalities codelist]() | + |  |  |
+|  **tender.procurementMethodModalities** | The modalities of the procurement method indicated with [Method Modalities codelist]() | + | + |  |
 |  **tender.otherCriteria** | The criteria. See [OtherCriteria]() | - | - |  |
 |  **tender.auctionPeriod** | General period of all auctions scheduled under specific contracting process. See [Period]() | + | - |  |
 |  **tender.electronicAuctions** | See [electronicAuctions]() | + |  |  |

@@ -14,14 +14,14 @@
 |  **tender.title** | Title for this part of CP | + | + | + |
 |  **tender.description** | Description for this part of CP | + |  +|+  |
 |  **tender.awardCriteria** | Specify the award criteria for the procurement, using the [award criteria codelist]() | + |  |  |
-|  **tender.awardCriteriaDetails** | Specify the award criteria details for the procurement, using the [award criteria details codelist]() |  |  |  |
-|  **tender.conversions** | Conversions to be applied for the criteria. See [Conversion]() |  |  |  |
-|  **tender.criteria** | Criteria required for the tenderers. See [Criterion]() |  |  |  |
+|  **tender.awardCriteriaDetails** | Specify the award criteria details for the procurement, using the [award criteria details codelist]() | - |  |  |
+|  **tender.conversions** | Conversions to be applied for the criteria. See [Conversion]() | - |  |  |
+|  **tender.criteria** | Criteria required for the tenderers. See [Criterion]() | - |  |  |
 |  **tender.status** | The current status of this part of CP based on the [tenderStatus codelist]() | + |  |  |
 |  **tender.statusDetails** | The current status of this part of CP based on the [tenderStatusDetails codelist]() | + |  |  |
-|  **tender.enquiryPeriod** | The period during which potential bidders may submit questions and requests for clarification. See [Period]() |  |  |  |
-|  **tender.hasEnquiries** | A true/false field to indicate whether any enquiries were received during the tender process. |  |  |  |
-|  **tender.enquiries** | List of received enquiries and comment from PE.See [Enquiry]() |  |  |  |
+|  **tender.enquiryPeriod** | The period during which potential bidders may submit questions and requests for clarification. See [Period]() | - |  |  |
+|  **tender.hasEnquiries** | A true/false field to indicate whether any enquiries were received during the tender process. | - |  |  |
+|  **tender.enquiries** | List of received enquiries and comment from PE.See [Enquiry]() | - |  |  |
 |  **tender.standStillPeriod** | The period for complaints. See [Period]() | + |  |  |
 |  **tender.lotGroups.optionToCombine** | True/False value indicates the CA reserves the right to combine the lots in this group when awarding a contract | + |  |  |
 |  **tender.lots** | A tender process is divided into lots. See [Lots]() | + |  |  |
@@ -33,9 +33,9 @@
 |  **tender.tenderPeriod** | The period when this part of CP will be open for submission. See [Period]() | - |  |  |
 |  **tender.secondStage** | The number of participants in the second stage of GPA procedure. See [Period]() | - |  |  |
 |  **tender.procurementMethodModalities** | The modalities of the procurement method indicated with [Method Modalities codelist]() | + |  |  |
-|  **tender.otherCriteria** | The criteria. See [OtherCriteria]() |  |  |  |
-|  **tender.auctionPeriod** | General period of all auctions scheduled under specific contracting process. See [Period]() |  |  |  |
-|  **tender.electronicAuctions** | See [electronicAuctions]() |  |  |  |
+|  **tender.otherCriteria** | The criteria. See [OtherCriteria]() | - |  |  |
+|  **tender.auctionPeriod** | General period of all auctions scheduled under specific contracting process. See [Period]() | - |  |  |
+|  **tender.electronicAuctions** | See [electronicAuctions]() | - |  |  |
 |  **tender.documents** | All documents and attachments related to the tender, including any notices. See the [documentType codelist]() | + |  |  |
 |  **tender.amendments** | An array of amendments for CP. See [Amendment]() | + | + | + |
 |  **bids.details** | An array of bids, providing information on the bidders, bid status, bid values and related documents. See [Bids]() | - |  |  |

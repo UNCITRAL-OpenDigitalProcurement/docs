@@ -1,6 +1,6 @@
-|   | **Attribute** |  | **PN** |  | **CNonPN** |  |  |
+|   | **Attribute** |  | **PN** |  | | **CNonPN**  |  |
 | :--- | :--- | :--- | :---: | --- | :---: | --- | --- |
-|   |  |  | pn | pin | open | limited | selective |
+|   |  |  | **pn** | **pin** | **open** | **limited** | **selective** |
 |   | **planning** |  | required | required | required | required | required |
 |  CM-001 | planning.rationale |  | optional | optional | optional | optional | optional |
 |  CM-002 | planning.budget.description |  | optional | optional | optional | optional | optional |

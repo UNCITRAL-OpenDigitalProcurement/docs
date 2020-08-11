@@ -8,7 +8,7 @@
 |   | planning.budget.description |  | optional | optional | optional | optional | optional |
 |   | planning.budget.budgetBreakdown[].id |  | required | required | inoperable | inoperable | inoperable |
 |   | planning.budget.budgetBreakdown[].amount.amount | has to be equal or less than budget.amount.amount in used FS | required | required | inoperable | inoperable | inoperable |
-|   | planning.budget.budgetBreakdown[].amount.currency | The same value has to be delivered for each budgetBreakdown | required | required | required | required | required |
+|   | planning.budget.budgetBreakdown[].amount.currency | The same value has to be delivered for each budgetBreakdown | required | required | inoperable | inoperable | inoperable |
 |   | **tender** |  | required | required | required | required | required |
 |   | tender.title |  | required | required | required | required | required |
 |   | tender.description |  | required | required | required | required | required |
@@ -176,5 +176,5 @@
 |   | tender.items[].unit.scheme |  |  |  |  |  |  |
 |   | tender.items[].unit.id |  |  |  |  |  |  |
 |   | tender.items[].unit.name |  |  |  |  |  |  |
-|   | **preQualification** |  |  |  |  |  |  |
-|   | preQualification.period.endDate |  |  |  |  |  |  |
+|   | **preQualification** |  | inoperable | inoperable | inoperable | inoperable | required |
+|   | preQualification.period.endDate |  | inoperable | inoperable | inoperable | inoperable | required |

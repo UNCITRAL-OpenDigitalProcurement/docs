@@ -2,21 +2,21 @@
 
 |   | **Attribute** |  | **PN** |  | **CNonPN** |  |  |
 | :--- | :--- | :--- | :---: | --- | :---: | --- | --- |
-|   |  |  | pn | pin | open | limited | selective |
+|   |  |  | **pn** | **pin** | **open** | **limited** | **selective** |
 |   | **planning** |  | required | required | required | required | required |
 |   | planning.rationale |  | optional | optional | optional | optional | optional |
 |   | planning.budget.description |  | optional | optional | optional | optional | optional |
-|   | planning.budget.budgetBreakdown[*].id |  | required | required | inoperable | inoperable | inoperable |
-|   | planning.budget.budgetBreakdown[*].amount.amount | has to be equal or less than budget.amount.amount in used FS | required | required | inoperable | inoperable | inoperable |
-|   | planning.budget.budgetBreakdown[*].amount.currency | The same value has to be delivered for each budgetBreakdown | required | required | required | required | required |
-|   | **tender** |  |  |  |  |  |  |
+|   | planning.budget.budgetBreakdown[].id |  | required | required | inoperable | inoperable | inoperable |
+|   | planning.budget.budgetBreakdown[].amount.amount | has to be equal or less than budget.amount.amount in used FS | required | required | inoperable | inoperable | inoperable |
+|   | planning.budget.budgetBreakdown[].amount.currency | The same value has to be delivered for each budgetBreakdown | required | required | required | required | required |
+|   | **tender** |  | required | required | required | required | required |
 |   | tender.title |  | required | required | required | required | required |
 |   | tender.description |  | required | required | required | required | required |
 |   | tender.secondStage.minimumCandidates |  | inoperable | inoperable | inoperable | inoperable | optional |
-|   | tender.secondStage.maximumCandidates |  | inoperable | optional | inoperable | inoperable | optional |
-|   | tender.otherCriteria |  |  |  |  |  |  |
-|   | tender.otherCriteria.reductionCriteria |  | inoperable | optional | optional | optional | optional |
-|   | tender.otherCriteria.qualificationSystemMethods |  | inoperable | optional | inoperable | inoperable | optional |
+|   | tender.secondStage.maximumCandidates |  | inoperable | inoperable | inoperable | inoperable | optional |
+|   | tender.otherCriteria |  | inoperable | inoperable | inoperable | inoperable | required |
+|   | tender.otherCriteria.reductionCriteria |  | inoperable | inoperable  | inoperable | inoperable | required |
+|   | tender.otherCriteria.qualificationSystemMethods |  | inoperable | inoperable | inoperable | inoperable | required |
 |   | tender.awardCriteria |  | inoperable | inoperable | required | required | required |
 |   | tender.awardCriteriaDetails |  | inoperable | inoperable | required | required | required |
 |   | tender.procurementMethodAdditionalInfo |  | inoperable | inoperable | optional | optional | optional |

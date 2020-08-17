@@ -57,39 +57,6 @@
       ],
       "format": "date-time"
     },
-    "value": {
-      "title": "Value",
-      "description": "The total value of this award. In the case of a framework contract this may be the total estimated lifetime value, or maximum value, of the agreement. There may be more than one award per procurement. A negative value indicates that the award may involve payments from the supplier to the buyer (commonly used in concession contracts).",
-      "$ref": "#/definitions/Value"
-    },
-    "suppliers": {
-      "title": "Suppliers",
-      "description": "The suppliers awarded this award. If different suppliers have been awarded different items of values, these should be split into separate award blocks.",
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/OrganizationReference"
-      },
-      "uniqueItems": true
-    },
-    "items": {
-      "title": "Items awarded",
-      "description": "The goods and services awarded in this award, broken into line items wherever possible. Items should not be duplicated, but the quantity specified instead.",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "$ref": "#/definitions/Item"
-      },
-      "uniqueItems": true
-    },
-    "documents": {
-      "title": "Documents",
-      "description": "All documents and attachments related to the award, including any notices.",
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/Document"
-      },
-      "uniqueItems": true
-    },
     "relatedLots": {
       "title": "Related lot(s)",
       "description": "If this award relates to one or more specific lots, provide the identifier(s) of the related lot(s) here.",

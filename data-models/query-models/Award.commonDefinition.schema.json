@@ -1,6 +1,8 @@
-"id":"",
-"$schema": "http://json-schema.org/draft-04/schema#",
-"type": "object",
-"title": "Award.commonDefinition",
-"description": "A common definitions of an 'award' as per standard",
-"$ref": "https://raw.githubusercontent.com/UNCITRAL-OpenDigitalProcurement/data-standard/master/schema/release-schema.json#/definitions/Award"
+{
+  "id":"",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Award.commonDefinition",
+  "description": "A common definitions of an 'award' as per standard",
+  "$ref": "https://raw.githubusercontent.com/UNCITRAL-OpenDigitalProcurement/data-standard/master/schema/release-schema.json#/definitions/Award"
+}

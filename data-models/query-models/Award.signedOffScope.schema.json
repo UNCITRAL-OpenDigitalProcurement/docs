@@ -80,9 +80,9 @@
       "description": "All documents and attachments related to the award, including any notices.",
       "type": "array",
       "items": {
-        "$ref": ""
+        "$ref": "https://raw.githubusercontent.com/UNCITRAL-OpenDigitalProcurement/docs/master/content/03.%20Data%20Standard/03.3.%20Definitions/Document.md"
       },
       "uniqueItems": true
-    },
+    }
   }
 }

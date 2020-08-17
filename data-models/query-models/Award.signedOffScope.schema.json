@@ -80,7 +80,7 @@
       "description": "All documents and attachments related to the award, including any notices.",
       "type": "array",
       "items": {
-        "$ref": "https://standard.open-contracting.org/schema/1__1__4/release-schema.json"
+        "$ref": "https://standard.open-contracting.org/schema/1__1__4/release-schema.json#/Definitions/Document"
       },
       "uniqueItems": true
     }

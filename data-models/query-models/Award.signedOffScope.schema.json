@@ -1,8 +1,19 @@
 {
+  "id":"",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "title": "Award.signedOffScope",
   "description": "A scope  signed off for a contract",
+  "required": [
+    "id",
+    "date",
+    "status",
+    "statusDetails",
+    "value",
+    "items",
+    "relatedLots",
+    "suppliers"
+  ],
   "properties": {
     "id": {
       "title": "Award ID",

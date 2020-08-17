@@ -74,6 +74,15 @@
       "title": "Status details",
       "description": "Additional details of an award status.",
       "type": "string"
-    }
+    },
+    "documents": {
+      "title": "Documents",
+      "description": "All documents and attachments related to the award, including any notices.",
+      "type": "array",
+      "items": {
+        "$ref": "content/03. Data Standard/03.3. Definitions/Document.md"
+      },
+      "uniqueItems": true
+    },
   }
 }

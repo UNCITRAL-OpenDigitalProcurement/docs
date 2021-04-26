@@ -1,4 +1,4 @@
-_{
+{
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Definitions of OCDS elements",
   "type": "object",
@@ -3686,4 +3686,4 @@ _{
       }
     }
   }
-}_
+}

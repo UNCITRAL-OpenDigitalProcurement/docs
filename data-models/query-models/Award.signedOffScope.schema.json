@@ -80,7 +80,7 @@
       "description": "All documents and attachments related to the award, including any notices.",
       "type": "array",
       "items": {
-        "$ref": "../data-standard/release-schema.json#/definitions/Document"
+        "$ref": "https://raw.githubusercontent.com/UNCITRAL-OpenDigitalProcurement/data-standard/master/schema/release-schema.json#/definitions/Document"
       },
       "uniqueItems": true
     }

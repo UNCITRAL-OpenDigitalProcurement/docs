@@ -60,7 +60,7 @@ export const Layout: FC = ({ children }) => {
               {firstDocName && <Link to={`/${repo.docsFolder}/${firstDocName}`}>Docs</Link>}
 
               <a href={`https://github.com/${repo.owner}/${repo.name}`} target="_blank" rel="noopener noreferrer">
-                Github
+                @GitHub
               </a>
             </Styled.Nav>
 
@@ -76,11 +76,10 @@ export const Layout: FC = ({ children }) => {
           </Styled.Main>
 
           <Styled.Footer>
-            © 2020{' '}
+            © 2022{' '}
             <a href="https://ustudio.company" target="_blank" rel="noreferrer noopener">
               uStudio LLC
             </a>{' '}
-            ❤️
           </Styled.Footer>
         </Styled.Layout>
       </DrawerCloser>
